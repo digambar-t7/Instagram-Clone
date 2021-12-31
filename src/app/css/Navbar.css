@@ -1,0 +1,68 @@
+.Navbar{
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.Navbar nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 935px;
+    /* border: 1px solid; */
+}
+
+.Navbar .instagram{
+    height: 28px;
+}
+
+.Navbar .search{
+    width: 28%;
+    height: 60%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #FAFAFA;
+    margin-right: -165px;
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+}
+
+.Navbar .search-icon{
+    padding-left: 10px;
+    width: 11px;
+}
+
+.Navbar input{
+    color: #8F8F8F;
+    background: transparent;
+    border: none;
+    padding-left: 10px;
+}
+
+.Navbar .search span{
+    font-size: 14px;
+}
+
+.Navbar .tabs{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid; */
+}
+
+.Navbar svg{
+    padding: 11px;
+}
+
+/* messenger tullu */
+/* display: inline-block;
+background-color: red;
+border-radius: 54%;
+padding: 0 5px;
+color: white;
+position: absolute;
+right: 0; */
