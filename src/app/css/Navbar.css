@@ -1,4 +1,4 @@
-.Navbar{
+#Navbar{
     height: 60px;
     display: flex;
     justify-content: center;
@@ -7,7 +7,7 @@
     background-color: #fff;
 }
 
-.Navbar nav{
+#Navbar nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,11 +16,11 @@
     /* border: 1px solid; */
 }
 
-.Navbar .instagram{
+#Navbar .instagram{
     height: 28px;
 }
 
-.Navbar .search{
+#Navbar .search{
     width: 28%;
     height: 60%;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -31,23 +31,23 @@
     border-radius: 3px;
 }
 
-.Navbar .search-icon{
+#Navbar .search-icon{
     padding-left: 10px;
     width: 11px;
 }
 
-.Navbar input{
+#Navbar input{
     color: #8F8F8F;
     background: transparent;
     border: none;
     padding-left: 10px;
 }
 
-.Navbar .search span{
+#Navbar .search span{
     font-size: 14px;
 }
 
-.Navbar .tabs{
+#Navbar .tabs{
     height: 100%;
     display: flex;
     justify-content: center;
@@ -55,12 +55,13 @@
     /* border: 1px solid; */
 }
 
-.Navbar svg{
+#Navbar svg{
     padding: 11px;
     box-sizing: content-box;
+    cursor: pointer;
 }
 
-.Navbar #unread{
+#Navbar #unread{
     background-color: red;
     border-radius: 54%;
     padding: 0 5px;
@@ -73,7 +74,7 @@
 }
 
 /* Adding a post */
-.Navbar .addpost{
+#Navbar .addpost{
     width: 451px;
     position: fixed;
     background-color: white;
@@ -83,22 +84,22 @@
     box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.1);
 }
 
-.Navbar .addpost .header{
+#Navbar .addpost .header{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 10px;
 }
 
-.Navbar .addpost .header{
+#Navbar .addpost .header{
     border-bottom:1px solid rgba(0, 0, 0, 0.1);
 }
 
-.Navbar .addpost .header h4{
+#Navbar .addpost .header h4{
     margin: 0;
 }
 
-.Navbar .dragger {
+#Navbar .dragger {
     padding: 24px ;
     height: 451px;
     display: flex;
@@ -107,7 +108,7 @@
     align-items: center;
 }
 
-.Navbar .dragger button{
+#Navbar .dragger button{
     background-color: #0095f6;
     color: #fff;
     border: none;
@@ -118,12 +119,13 @@
     border-radius: 5px;
 }
 
-.Navbar .addpost .close-btn{
+#Navbar .addpost .close-btn{
     position: fixed;
     top: 7px;
     right: 7px;
     cursor: pointer;
     background-color: black;
+    border-radius: 50%;
 }
 
 

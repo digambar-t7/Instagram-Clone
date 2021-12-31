@@ -1,0 +1,103 @@
+#Home{
+    display: flex;
+    justify-content: center;
+}
+
+#Home > .inner {
+    width : 935px;
+}
+
+#Home > .inner {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem ;
+}
+
+#Home .left {
+    width: 610px;
+}
+
+/* Stories */
+#Home .stories {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1.2rem 0;
+    
+    overflow-x: hidden;
+}
+#Home .stories div {
+    padding-left: 1rem;
+}
+#Home .stories img {
+    width : 55px;
+    border-radius: 50%;
+}
+#Home .stories p {
+    margin: 0;
+    text-align: center;
+    color: rgba(0,0,0,0.6);
+    font-size: 14px;
+}
+
+/* Suggestions */
+#Home .right {
+    width: 325px;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 21px;
+    padding-top: 1rem;
+}
+
+/* Suggestions :: Head */
+#Home .right .head{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+#Home .right .head > div{
+    display: flex;
+    align-items: center;
+}
+#Home .right .head img {
+    width : 55px;
+    border-radius: 50%;
+}
+
+/* Suggestions :: Mid */
+#Home .right .mid{
+    width: 100%;
+}
+#Home .right .mid .upper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 7px;
+}
+#Home .right .mid .upper span{
+    font-weight: 600;
+    color: #8e8e8e;
+    font-size: 14px;
+}
+#Home .right .mid .lower{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#Home .right .mid .lower > div{
+    display: flex;
+    align-items: center;
+}
+#Home .right .mid .lower img {
+    width : 33px;
+    border-radius: 50%;
+}
+
+#Home .right .lower p{
+    margin: 7px;
+}
