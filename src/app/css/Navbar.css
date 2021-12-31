@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #fff;
 }
 
 .Navbar nav{
@@ -56,13 +57,74 @@
 
 .Navbar svg{
     padding: 11px;
+    box-sizing: content-box;
 }
 
-/* messenger tullu */
-/* display: inline-block;
-background-color: red;
-border-radius: 54%;
-padding: 0 5px;
-color: white;
-position: absolute;
-right: 0; */
+.Navbar #unread{
+    background-color: red;
+    border-radius: 54%;
+    padding: 0 5px;
+    color: white;
+    position: relative;
+    right: 21px;
+    font-size: 12px;
+    top: -27px;
+
+}
+
+/* Adding a post */
+.Navbar .addpost{
+    width: 451px;
+    position: fixed;
+    background-color: white;
+    top: 13%;
+    border-radius: 14px;
+    display: none;
+    box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.1);
+}
+
+.Navbar .addpost .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.Navbar .addpost .header{
+    border-bottom:1px solid rgba(0, 0, 0, 0.1);
+}
+
+.Navbar .addpost .header h4{
+    margin: 0;
+}
+
+.Navbar .dragger {
+    padding: 24px ;
+    height: 451px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Navbar .dragger button{
+    background-color: #0095f6;
+    color: #fff;
+    border: none;
+    margin-top: 17px;
+    padding: 7px;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.Navbar .addpost .close-btn{
+    position: fixed;
+    top: 7px;
+    right: 7px;
+    cursor: pointer;
+    background-color: black;
+}
+
+
+
