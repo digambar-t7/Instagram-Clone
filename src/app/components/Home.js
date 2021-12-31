@@ -72,7 +72,7 @@ const Home = () => {
                     </div>
                     <div className='mid'>
                         <div className='upper'>
-                            <span>Suggestions for you</span>
+                            <span>Suggestions For You</span>
                             <a href='#' style={{ fontWeight: 600, fontSize: "13px" }}>See All</a>
                         </div>
 
@@ -118,7 +118,22 @@ const Home = () => {
                         </div>
 
                     </div>
-                    <div className='footer'>footer</div>
+                    <div className='footer'>
+                        <div>
+                            <a href='#'>About</a>
+                            <a href='#'>Help</a>
+                            <a href='#'>Press</a>
+                            <a href='#'>API</a>
+                            <a href='#'>Jobs</a>
+                            <a href='#'>Privacy</a>
+                            <a href='#'>Terms</a><br />
+                            <a href='#'>Locations</a>
+                            <a href='#'>Top Accounts</a>
+                            <a href='#'>Hastags</a>
+                            <a href='#'>Language</a>
+                        </div>
+                        <div><a>© 2022 INSTAGRAM FROM META</a></div>
+                    </div>
                 </div>
             </div>
         </div>
