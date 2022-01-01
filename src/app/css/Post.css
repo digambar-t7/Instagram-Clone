@@ -1,0 +1,87 @@
+.Post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.Post > div{
+    width: 100%;
+}
+
+/* Post :: Header */
+.Post .header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 16px;
+}
+.Post .header > div{
+    display: flex;
+    align-items: center;
+}
+.Post .header img {
+    width : 33px;
+    border-radius: 50%;
+}
+
+.Post .header p{
+    margin: 7px;
+}
+
+/* Post :: like/share btns */
+.Post .icons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    padding-bottom: 0;
+}
+.Post .icons > div > svg {
+    margin-right: 1rem;
+} 
+
+/* Post :: Comment section */
+.Post .comment {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.Post .comment .cmnt{
+    margin: 0;
+    width: 100%;
+    padding: 8px 1rem;
+    border: none !important;
+    color: rgba(0,0,0,0.7);
+}
+
+.Post .comment .cmnt[placeholder]:empty:before {
+    content: attr(placeholder);
+    color: rgba(0,0,0,0.7);
+}
+
+/* Post :: Captions area */
+.Post .caption{
+    padding: 0.5rem 1rem;
+}
+.Post .caption p{
+    margin: 0.5rem 0;
+}
+.Post .caption .like{
+    color : #262626;
+    font-weight: 600;
+    font-size: 14px;
+}
+.Post .caption .total{
+    color : #8E8E8E;
+    font-size: 14px;
+}
+.Post .caption .time{
+    color : #8E8E8E;
+    font-size: 10px;
+}

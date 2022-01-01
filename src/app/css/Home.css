@@ -1,29 +1,29 @@
 #Home{
     display: flex;
     justify-content: center;
-}
-
-#Home > .inner {
-    width : 935px;
+    height: 100vh;
+    overflow: hidden;
 }
 
 #Home > .inner {
     display: flex;
     justify-content: center;
-    margin-top: 2rem ;
+    width : 935px;
 }
 
 #Home .left {
     width: 610px;
+    overflow: auto;
 }
+#Home .left::-webkit-scrollbar {display:none;}
 
 /* Stories */
 #Home .stories {
     display: flex;
     align-items: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     padding: 1.2rem 0;
-    
+    margin-top: 5.8rem;
     overflow-x: hidden;
 }
 #Home .stories div {
@@ -49,6 +49,8 @@
     align-items: center;
     padding-left: 21px;
     padding-top: 1rem;
+    position: sticky;
+    top: 93px;
 }
 
 /* Suggestions :: Head */

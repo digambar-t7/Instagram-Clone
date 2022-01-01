@@ -1,5 +1,6 @@
 import React from 'react';
 import '../css/Home.css';
+import Post from './Post';
 
 const Home = () => {
     return (
@@ -59,7 +60,12 @@ const Home = () => {
                         </div>
 
                     </div>
-                    <div className='posts bg'>posts</div>
+
+                    <div className='post'>
+                        <Post />
+                        <Post />
+                        <Post />
+                    </div>
                 </div>
 
                 <div className='right' >

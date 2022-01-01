@@ -23,6 +23,7 @@ const Navbar = () => {
     }
 
     return (
+
         <div id='Navbar'>
             <nav>
                 <img className='instagram' src={require('../images/instagram.png')} alt='instagram' />
