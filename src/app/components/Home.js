@@ -63,8 +63,6 @@ const Home = () => {
 
                     <div className='post'>
                         <Post />
-                        <Post />
-                        <Post />
                     </div>
                 </div>
 

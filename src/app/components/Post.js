@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import '../css/Post.css';
 
 const Post = () => {
+
+    const more_ref = useRef(null);
+
+    const openMore = () => {
+        more_ref.current.style.display = "flex";
+        document.getElementsByClassName('overlay')[0].style.display = "block";
+    }
+    const closeMore = () => {
+        more_ref.current.style.display = "none";
+        document.getElementsByClassName('overlay')[0].style.display = "none";
+    }
     return (
         <div className='Post bg'>
             <div className='header'>
@@ -9,7 +20,7 @@ const Post = () => {
                     <img src={require('../images/heart.png')} />
                     <p style={{ paddingLeft: "13px" }} > <strong> <a href='#' >nigga_sheth</a> </strong> </p>
                 </div>
-                <svg aria-label="More options" className="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><circle cx="12" cy="12" r="1.5"></circle><circle cx="6" cy="12" r="1.5"></circle><circle cx="18" cy="12" r="1.5"></circle></svg>
+                <svg onClick={openMore} aria-label="More options" className="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><circle cx="12" cy="12" r="1.5"></circle><circle cx="6" cy="12" r="1.5"></circle><circle cx="18" cy="12" r="1.5"></circle></svg>
             </div>
 
             <img style={{ width: "-webkit-fill-available" || "608px" }} className='pic' src={require('../images/post/bowl.jpg')} alt='Connection timed out' />
@@ -34,6 +45,17 @@ const Post = () => {
                 <svg aria-label="Emoji" className="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><path d="M15.83 10.997a1.167 1.167 0 101.167 1.167 1.167 1.167 0 00-1.167-1.167zm-6.5 1.167a1.167 1.167 0 10-1.166 1.167 1.167 1.167 0 001.166-1.167zm5.163 3.24a3.406 3.406 0 01-4.982.007 1 1 0 10-1.557 1.256 5.397 5.397 0 008.09 0 1 1 0 00-1.55-1.263zM12 .503a11.5 11.5 0 1011.5 11.5A11.513 11.513 0 0012 .503zm0 21a9.5 9.5 0 119.5-9.5 9.51 9.51 0 01-9.5 9.5z"></path></svg>
                 <p className="cmnt" contentEditable="true" placeholder='Add a comment...'></p>
                 <a href='#' style={{ color: "#0095f6", fontWeight: 600, fontSize: "15px" }}>Post</a>
+            </div>
+
+            {/* More Modal */}
+            <div className='more' ref={more_ref}>
+                <a href='#'>Report</a>
+                <a href='#'>Unfollow</a>
+                <a href='#'>Go to post</a>
+                <a href='#'>Share to...</a>
+                <a href='#'>Copy Link</a>
+                <a href='#'>Embed</a>
+                <a onClick={closeMore} href='#' >Cancel</a>
             </div>
 
         </div>

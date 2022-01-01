@@ -51,6 +51,7 @@
     padding-top: 1rem;
     position: sticky;
     top: 93px;
+    z-index: -1;
 }
 
 /* Suggestions :: Head */

@@ -18,3 +18,15 @@ a{
 svg{
     cursor: pointer;
 }
+/* Overlay div */
+.overlay{
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 0;
+    /* background: #252525; */
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    opacity: 1;
+}
