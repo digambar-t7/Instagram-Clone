@@ -1,6 +1,7 @@
 import React from 'react';
 import '../css/Home.css';
-import Post from './Post';
+import Post from './PostsWindow';
+import Stories from './Stories';
 
 const Home = () => {
     return (
@@ -8,7 +9,8 @@ const Home = () => {
             <div className='inner'>
 
                 <div className='left' >
-                    <div className='stories bg'>
+                    <Stories />
+                    {/* <div className='stories bg'>
 
                         <div>
                             <img src={require('../images/heart.png')} />
@@ -59,7 +61,7 @@ const Home = () => {
                             <p>nigga</p>
                         </div>
 
-                    </div>
+                    </div> */}
 
                     <div className='post'>
                         <Post />
