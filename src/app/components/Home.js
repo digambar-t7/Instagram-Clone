@@ -1,6 +1,7 @@
 import React from 'react';
 import '../css/Home.css';
-import Post from './PostsWindow';
+import Post from './Post';
+import PostsWindow from './PostsWindow';
 import Stories from './Stories';
 
 const Home = () => {
@@ -10,62 +11,7 @@ const Home = () => {
 
                 <div className='left' >
                     <Stories />
-                    {/* <div className='stories bg'>
-
-                        <div>
-                            <img src={require('../images/heart.png')} />
-                            <p>nigga</p>
-                        </div>
-                        <div>
-                            <img src={require('../images/heart.png')} />
-                            <p>nigga</p>
-                        </div>
-                        <div>
-                            <img src={require('../images/heart.png')} />
-                            <p>nigga</p>
-                        </div>
-                        <div>
-                            <img src={require('../images/heart.png')} />
-                            <p>nigga</p>
-                        </div>
-                        <div>
-                            <img src={require('../images/heart.png')} />
-                            <p>nigga</p>
-                        </div>
-                        <div>
-                            <img src={require('../images/heart.png')} />
-                            <p>nigga</p>
-                        </div>
-                        <div>
-                            <img src={require('../images/heart.png')} />
-                            <p>nigga</p>
-                        </div>
-                        <div>
-                            <img src={require('../images/heart.png')} />
-                            <p>nigga</p>
-                        </div>
-                        <div>
-                            <img src={require('../images/heart.png')} />
-                            <p>nigga</p>
-                        </div>
-                        <div>
-                            <img src={require('../images/heart.png')} />
-                            <p>nigga</p>
-                        </div>
-                        <div>
-                            <img src={require('../images/heart.png')} />
-                            <p>nigga</p>
-                        </div>
-                        <div>
-                            <img src={require('../images/heart.png')} />
-                            <p>nigga</p>
-                        </div>
-
-                    </div> */}
-
-                    <div className='post'>
-                        <Post />
-                    </div>
+                    <PostsWindow />
                 </div>
 
                 <div className='right' >
