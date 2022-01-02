@@ -36,7 +36,7 @@ const Post = () => {
 
             <div className='caption'>
                 <p className='like'>777,144 likes</p>
-                <p className='main'><strong>championsleague</strong> Your favourite Manchester United signing by Sir Alex Ferguson❓</p>
+                <p className='main'><strong><a href='#'>championsleague</a></strong> Your favourite Manchester United signing by Sir Alex Ferguson❓</p>
                 <p className='total'>View all 40 comments</p>
                 <p className='time'>26 MINUTES AGO</p>
             </div>

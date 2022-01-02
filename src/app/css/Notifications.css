@@ -1,0 +1,63 @@
+#Notifications{
+    width: 500px;
+    height: 362px;
+    display: flex;
+    flex-direction : column;
+    background-color: #fff;
+    border-radius: 5px;
+    position: absolute;
+    top: 3.5rem;
+    right: 14rem;
+    padding: 0 1rem;
+    color: #262626;
+    overflow: auto;
+    box-shadow: 0 18px 53px 0 rgba(0,0,0,0.1);
+}
+
+ .rhombus{
+    width: 12px;
+    height: 12px;
+    transform: rotate(45deg);
+    position: absolute;
+    top: -7px;
+    right: 62px;
+    background: black;
+    border-left: 1px solid;
+    border-top: 1px solid;
+}
+
+#Notifications .time{
+    color : #8E8E8E;
+    padding: 0;
+}
+
+#Notifications .notify{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+#Notifications .notify img{
+    font-size: 14px;
+    width: 61px;
+    height: 44px;
+}
+#Notifications .notifier{
+    border-radius: 49px;
+    overflow: hidden;
+}
+
+#Notifications .notify span{
+    width: 100%;
+    font-size: 14px;
+    padding: 0 12px;
+}
+
+#Notifications h4 {
+    margin: 10px 0;
+}
+
+#nouter{
+    border: 1px solid red;
+}

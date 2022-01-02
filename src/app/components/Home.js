@@ -1,5 +1,6 @@
 import React from 'react';
 import '../css/Home.css';
+import Notifications from './Notifications';
 import PostsWindow from './PostsWindow';
 import Stories from './Stories';
 import Suggestions from './Suggestions';
@@ -11,6 +12,10 @@ const Home = () => {
 
                 <div className='left' >
                     <Stories />
+
+                    {/* for demo purpose only */}
+                    <Notifications />
+                    {/* plz delete later */}
 
                     {/* PostsWindow :: consists of all the posts */}
                     <PostsWindow />

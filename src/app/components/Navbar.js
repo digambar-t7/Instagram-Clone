@@ -31,7 +31,6 @@ const Navbar = () => {
                 <div className='search'>
                     <img className='search-icon' src={require('../images/search.png')} />
                     <input value={find} onChange={handleFind} placeholder="Search" />
-                    {/* <span>Search</span> */}
                 </div>
 
                 <div className='tabs'>
