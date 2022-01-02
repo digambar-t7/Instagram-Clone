@@ -14,7 +14,7 @@ const Home = () => {
                     <Stories />
 
                     {/* for demo purpose only */}
-                    <Notifications />
+                    {/* <Notifications /> */}
                     {/* plz delete later */}
 
                     {/* PostsWindow :: consists of all the posts */}

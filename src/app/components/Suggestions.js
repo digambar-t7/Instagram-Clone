@@ -77,4 +77,4 @@ const Suggestions = () => {
     )
 }
 
-export default Suggestions;
+export default Suggestions
