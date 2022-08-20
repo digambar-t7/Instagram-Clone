@@ -1,0 +1,63 @@
+#Profile {
+    width: 935px;
+    border: 1px solid gainsboro;
+    display: flex;
+    margin: 5rem auto 0;
+}
+
+#Profile .bio {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#Profile .bio .left {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+}
+
+#Profile .left img {
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+}
+
+#Profile .bio .right {
+    padding: 0 65px;
+    width: -webkit-fill-available;
+}
+
+#Profile .right .nameBtns {}
+
+#Profile .right .username {
+    font-size: 28px;
+}
+
+#Profile .right .btns {}
+
+#Profile .right .numbers {
+    margin: 17px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+#Profile .right .numbers span {
+    font-size: 16px;
+}
+
+#Profile .right .name {
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+#Profile .right .text {
+    font-size: 16px;
+}
+
+#Profile .right .followedBy {
+    font-size: 12px;
+}

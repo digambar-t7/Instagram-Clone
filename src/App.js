@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import Home from './app/components/Home';
 import Navbar from './app/components/Navbar';
+import Profile from './app/components/Profile';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
 
       <Routes>
         <Route strict path="/" element={<Home />} />
+        <Route strict path="/my-profile-page" element={<Profile />} />
       </Routes>
 
       {/* <div id='overlay'></div> */}

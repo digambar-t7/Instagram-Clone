@@ -1,7 +1,5 @@
 import React from 'react';
 import '../css/Home.css';
-import NavProfileBlock from './NavProfileBlock';
-import Notifications from './Notifications';
 import PostsWindow from './PostsWindow';
 import Stories from './Stories';
 import Suggestions from './Suggestions';

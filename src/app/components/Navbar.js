@@ -45,10 +45,8 @@ const Navbar = () => {
         let navProfileBlock = document.getElementById("NavProfileBlock");
         if (navProfileBlock.style.display === "none" || navProfileBlock.style.display === "") {
             navProfileBlock.style.display = "block";
-            console.log("navProfileBlock : visible")
         } else {
             navProfileBlock.style.display = "none";
-            console.log("navProfileBlock : invisible")
         }
     }
 
