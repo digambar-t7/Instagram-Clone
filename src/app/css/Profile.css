@@ -106,6 +106,7 @@
     width: 293px;
     height: 293px;
     margin: 12px;
+    cursor: pointer;
 }
 
 #Profile #content-container .piece img {
