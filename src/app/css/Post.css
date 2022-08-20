@@ -93,15 +93,15 @@
     justify-content: center;
     align-items: center;
     background-color: white;
+    width: 24rem !important;
+    border-radius: 17px;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    width: 24rem !important;
-    border-radius: 17px;
 }
 .more > a {
-    padding: 13px;
+    padding: 14px;
     font-size: 14px;
     border-bottom: 1px solid rgba(0,0,0,0.1);
     width: 100%;

@@ -15,7 +15,6 @@
     width: 610px;
     overflow: auto;
 }
-#Home .left::-webkit-scrollbar {display:none;}
 
 /* Stories */
 #Home .stories {
@@ -24,7 +23,7 @@
     margin-bottom: 1.5rem;
     padding: 1.2rem 0;
     margin-top: 5.8rem;
-    overflow-x: hidden;
+    overflow: auto;
 }
 #Home .stories div {
     padding-left: 1rem;
@@ -127,3 +126,7 @@
       display: none;
     }
   }
+
+/* Hiding the Scrollbar */
+#Home .left::-webkit-scrollbar {display:none;}
+#Home .stories::-webkit-scrollbar{display: none;}
