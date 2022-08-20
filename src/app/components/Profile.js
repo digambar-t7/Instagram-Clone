@@ -1,10 +1,12 @@
 import React from 'react'
 import '../css/Profile.css'
+import Footer from './Footer';
 import Stories from './Stories';
 
 const Profile = () => {
     return (
         <div id='Profile'>
+
             {/* Bio Section */}
             <div className='bio'>
                 <div className='left'>
@@ -26,11 +28,40 @@ const Profile = () => {
                     <p className='followedBy'>Followed by kshitij_kobal, deepikapadukone, prak7shzzz + 149 more</p>
                 </div>
             </div>
+
             {/* Highlights Section */}
             <div id='highlights'>
                 <Stories />
             </div>
-            {/* Pictures Section */}
+
+            {/* Content Section */}
+            <div id='content-container'>
+                <div className='type'>
+                    <div>POSTS</div>
+                    <div>REELS</div>
+                    <div>TAGGED</div>
+                </div>
+                <div className='body'>
+                    <div className='piece'>
+                        <img src={require("../images/post/fruits.jpg")}></img>
+                    </div>
+                    <div className='piece'>
+                        <img src={require("../images/post/plain.jpg")}></img>
+                    </div>
+                    <div className='piece'>
+                        <img src={require("../images/post/bowl.jpg")}></img>
+                    </div>
+                    <div className='piece'>
+                        <img src={require("../images/post/fish.jpg")}></img>
+                    </div>
+                    <div className='piece'>
+                        <img src={require("../images/post/main.jpg")}></img>
+                    </div>
+                </div>
+            </div>
+
+            <Footer />
+
         </div>
     )
 }
