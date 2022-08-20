@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import '../css/Stories.css';
 
 const Stories = () => {
     return (
-        <div className='stories bg'>
+        <div id='Stories' >
 
             <div>
                 <img src={require('../images/heart.png')} />
@@ -53,7 +54,7 @@ const Stories = () => {
                 <p>kali</p>
             </div>
 
-        </div>
+        </div >
     )
 }
 

@@ -1,0 +1,27 @@
+#Stories {
+    display: flex;
+    align-items: center;
+    overflow: auto;
+}
+
+#Stories div {
+    padding-left: 1rem;
+    cursor: pointer;
+}
+
+#Stories img {
+    width: 55px;
+    border-radius: 50%;
+}
+
+#Stories p {
+    margin: 0;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+}
+
+/* Hiding the horizontal scrollbar */
+#Stories::-webkit-scrollbar {
+    display: none;
+}

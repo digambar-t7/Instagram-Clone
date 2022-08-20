@@ -1,14 +1,14 @@
-#Home{
+#Home {
     display: flex;
     justify-content: center;
     height: 100vh;
     overflow: hidden;
 }
 
-#Home > .inner {
+#Home>.inner {
     display: flex;
     justify-content: center;
-    width : 935px;
+    width: 935px;
 }
 
 #Home .left {
@@ -17,27 +17,7 @@
 }
 
 /* Stories */
-#Home .stories {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1.5rem;
-    padding: 1.2rem 0;
-    margin-top: 5.8rem;
-    overflow: auto;
-}
-#Home .stories div {
-    padding-left: 1rem;
-}
-#Home .stories img {
-    width : 55px;
-    border-radius: 50%;
-}
-#Home .stories p {
-    margin: 0;
-    text-align: center;
-    color: rgba(0,0,0,0.6);
-    font-size: 14px;
-}
+
 
 /* Suggestions */
 #Home .right {
@@ -54,55 +34,62 @@
 }
 
 /* Suggestions :: Head */
-#Home .right .head{
+#Home .right .head {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 12px;
 }
-#Home .right .head > div{
+
+#Home .right .head>div {
     display: flex;
     align-items: center;
 }
+
 #Home .right .head img {
-    width : 55px;
+    width: 55px;
     border-radius: 50%;
 }
 
 /* Suggestions :: Mid */
-#Home .right .mid{
+#Home .right .mid {
     width: 100%;
 }
+
 /* Suggestions :: Mid :: Upper */
-#Home .right .mid .upper{
+#Home .right .mid .upper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 7px;
 }
-#Home .right .mid .upper span{
+
+#Home .right .mid .upper span {
     font-weight: 600;
     color: #8e8e8e;
     font-size: 14px;
 }
+
 /* Suggestions :: Mid :: Lower */
-#Home .right .mid .lower{
+#Home .right .mid .lower {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-#Home .right .mid .lower > div{
+
+#Home .right .mid .lower>div {
     display: flex;
     align-items: center;
 }
+
 #Home .right .mid .lower img {
-    width : 33px;
+    width: 33px;
     border-radius: 50%;
 }
 
-#Home .right .lower p{
+#Home .right .lower p {
     margin: 7px;
 }
 
@@ -110,23 +97,30 @@
 #Home .right .footer {
     width: 100%;
 }
+
 #Home .right .footer a {
     color: #c7c7c7;
     font-size: 11px;
     font-weight: 400;
     margin-right: 4px;
 }
-#Home .footer div{
+
+#Home .footer div {
     margin-top: 1.2rem;
 }
 
 /* Suggestions :: Media Query */
 @media screen and (max-width: 997px) {
     #Home .right {
-      display: none;
+        display: none;
     }
-  }
+}
 
 /* Hiding the Scrollbar */
-#Home .left::-webkit-scrollbar {display:none;}
-#Home .stories::-webkit-scrollbar{display: none;}
+#Home .left::-webkit-scrollbar {
+    display: none;
+}
+
+#Home #Stories::-webkit-scrollbar {
+    /* display: none; */
+}

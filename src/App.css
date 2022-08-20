@@ -1,25 +1,32 @@
-*{
+* {
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: #FAFAFA;
 }
 
-.bg{
+.bg {
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 3px;
+    padding-top: 0rem;
+    padding: 1.2rem 0;
+    margin-top: 4.8rem;
+    margin-bottom: -4rem;
 }
-a{
+
+a {
     color: #262626;
     text-decoration: none;
 }
-svg{
+
+svg {
     cursor: pointer;
 }
+
 /* Overlay div */
-.overlay{
+.overlay {
     top: 0;
     width: 100vw;
     height: 100vh;

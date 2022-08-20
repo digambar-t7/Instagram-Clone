@@ -27,6 +27,9 @@ const Profile = () => {
                 </div>
             </div>
             {/* Highlights Section */}
+            <div id='highlights'>
+                <Stories />
+            </div>
         </div>
     )
 }

@@ -10,7 +10,9 @@ const Home = () => {
             <div className='inner'>
 
                 <div className='left' >
-                    <Stories />
+                    <div className='bg'>
+                        <Stories />
+                    </div>
 
                     {/* for demo purpose only */}
                     {/* <NavProfileBlock /> */}
