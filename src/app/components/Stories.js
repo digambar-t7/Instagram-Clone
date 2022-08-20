@@ -6,51 +6,51 @@ const Stories = () => {
 
             <div>
                 <img src={require('../images/heart.png')} />
-                <p>nigga</p>
+                <p>kali</p>
             </div>
             <div>
                 <img src={require('../images/heart.png')} />
-                <p>nigga</p>
+                <p>kali</p>
             </div>
             <div>
                 <img src={require('../images/heart.png')} />
-                <p>nigga</p>
+                <p>kali</p>
             </div>
             <div>
                 <img src={require('../images/heart.png')} />
-                <p>nigga</p>
+                <p>kali</p>
             </div>
             <div>
                 <img src={require('../images/heart.png')} />
-                <p>nigga</p>
+                <p>kali</p>
             </div>
             <div>
                 <img src={require('../images/heart.png')} />
-                <p>nigga</p>
+                <p>kali</p>
             </div>
             <div>
                 <img src={require('../images/heart.png')} />
-                <p>nigga</p>
+                <p>kali</p>
             </div>
             <div>
                 <img src={require('../images/heart.png')} />
-                <p>nigga</p>
+                <p>kali</p>
             </div>
             <div>
                 <img src={require('../images/heart.png')} />
-                <p>nigga</p>
+                <p>kali</p>
             </div>
             <div>
                 <img src={require('../images/heart.png')} />
-                <p>nigga</p>
+                <p>kali</p>
             </div>
             <div>
                 <img src={require('../images/heart.png')} />
-                <p>nigga</p>
+                <p>kali</p>
             </div>
             <div>
                 <img src={require('../images/heart.png')} />
-                <p>nigga</p>
+                <p>kali</p>
             </div>
 
         </div>

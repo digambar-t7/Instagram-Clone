@@ -28,7 +28,7 @@ const Post = () => {
             <div className='header'>
                 <div>
                     <img src={require('../images/heart.png')} />
-                    <p style={{ paddingLeft: "13px" }} > <strong> <a href='#' >nigga_sheth</a> </strong> </p>
+                    <p style={{ paddingLeft: "13px" }} > <strong> <a href='#' >kali</a> </strong> </p>
                 </div>
                 <svg onClick={openMore} aria-label="More options" className="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><circle cx="12" cy="12" r="1.5"></circle><circle cx="6" cy="12" r="1.5"></circle><circle cx="18" cy="12" r="1.5"></circle></svg>
             </div>

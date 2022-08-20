@@ -1,5 +1,6 @@
 import React from 'react';
 import '../css/Home.css';
+import NavProfileBlock from './NavProfileBlock';
 import Notifications from './Notifications';
 import PostsWindow from './PostsWindow';
 import Stories from './Stories';
@@ -14,7 +15,7 @@ const Home = () => {
                     <Stories />
 
                     {/* for demo purpose only */}
-                    {/* <Notifications /> */}
+                    {/* <NavProfileBlock /> */}
                     {/* plz delete later */}
 
                     {/* PostsWindow :: consists of all the posts */}
