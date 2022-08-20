@@ -17,9 +17,9 @@ const Profile = () => {
                         </div>
                     </div>
                     <div className='numbers'>
-                        <span>3,340 posts</span>
-                        <span>477M followers</span>
-                        <span>520 following</span>
+                        <span><strong>3,340</strong> posts</span>
+                        <span><strong>477M</strong> followers</span>
+                        <span><strong>520</strong> following</span>
                     </div>
                     <p className='name'>Cristiano Ronaldo</p>
                     <div className='text'>www.cristianoronaldo.com</div>
@@ -30,6 +30,7 @@ const Profile = () => {
             <div id='highlights'>
                 <Stories />
             </div>
+            {/* Pictures Section */}
         </div>
     )
 }

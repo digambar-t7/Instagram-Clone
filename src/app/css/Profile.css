@@ -8,7 +8,6 @@
 
 #Profile .bio {
     display: flex;
-    /* justify-content: space-evenly; */
     align-items: center;
 }
 
@@ -66,5 +65,13 @@
 
 /* Highlights */
 #Profile #highlights {
-    padding: 25px 69px;
+    padding: 25px 35px;
+}
+
+#Profile #highlights #Stories img {
+    width: 75px;
+}
+
+#Profile #highlights #Stories div {
+    padding-left: 3rem;
 }

@@ -10,7 +10,7 @@ const Home = () => {
             <div className='inner'>
 
                 <div className='left' >
-                    <div className='bg'>
+                    <div className='stories-bg bg'>
                         <Stories />
                     </div>
 
