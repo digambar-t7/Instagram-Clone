@@ -4,6 +4,8 @@
     align-items: center;
     flex-wrap: wrap;
     padding: 13px;
+    width: 957px;
+    margin: auto;
 }
 
 #Footer a {

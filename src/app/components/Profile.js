@@ -44,24 +44,27 @@ const Profile = () => {
                 <div className='body'>
                     <div className='piece'>
                         <img src={require("../images/post/fruits.jpg")}></img>
+                        <div className='cover'></div>
                     </div>
                     <div className='piece'>
                         <img src={require("../images/post/plain.jpg")}></img>
+                        <div className='cover'></div>
                     </div>
                     <div className='piece'>
                         <img src={require("../images/post/bowl.jpg")}></img>
+                        <div className='cover'></div>
                     </div>
                     <div className='piece'>
                         <img src={require("../images/post/fish.jpg")}></img>
+                        <div className='cover'></div>
                     </div>
                     <div className='piece'>
                         <img src={require("../images/post/main.jpg")}></img>
+                        <div className='cover'></div>
                     </div>
                 </div>
             </div>
-
             <Footer />
-
         </div>
     )
 }

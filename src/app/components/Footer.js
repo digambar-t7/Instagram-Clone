@@ -17,9 +17,7 @@ const Footer = () => {
             <Link to={'Hastags'}>Hastags</Link>
             <Link to={'Locations'}>Locations</Link>
             <Link to={'Instagram-Lite'}>Instagram Lite</Link>
-            <Link to={'Contact-Uploading-&-Non-Users'}>Contact Uploading & Non-Users</Link>
-            {/* <Link to={'English'}>English</Link> */}
-            <select>
+            <Link to={'Contact-Uploading-&-Non-Users'}>Contact Uploading & Non-Users</Link>            <select>
                 <option value={'English'}>Kannada</option>
                 <option value={'English'}>English</option>
                 <option value={'English'}>Hindi</option>

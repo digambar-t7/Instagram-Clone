@@ -7,6 +7,7 @@ import {
 import Home from './app/components/Home';
 import Navbar from './app/components/Navbar';
 import Profile from './app/components/Profile';
+import Footer from './app/components/Footer';
 
 function App() {
   return (
@@ -20,7 +21,6 @@ function App() {
       </Routes>
 
       {/* <div id='overlay'></div> */}
-
     </BrowserRouter>
   );
 }

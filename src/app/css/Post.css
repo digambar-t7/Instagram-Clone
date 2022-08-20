@@ -5,28 +5,30 @@
     margin-bottom: 1.5rem;
 }
 
-.Post > div{
+.Post>div {
     width: 100%;
 }
 
 /* Post :: Header */
-.Post .header{
+.Post .header {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 13px 16px;
 }
-.Post .header > div{
+
+.Post .header>div {
     display: flex;
     align-items: center;
 }
+
 .Post .header img {
-    width : 33px;
+    width: 33px;
     border-radius: 50%;
 }
 
-.Post .header p{
+.Post .header p {
     margin: 7px;
 }
 
@@ -38,9 +40,10 @@
     padding: 1rem;
     padding-bottom: 0;
 }
-.Post .icons > div > svg {
+
+.Post .icons>div>svg {
     margin-right: 1rem;
-} 
+}
 
 /* Post :: Comment section */
 .Post .comment {
@@ -52,42 +55,46 @@
     border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.Post .comment .cmnt{
+.Post .comment .cmnt {
     margin: 0;
     width: 100%;
     padding: 8px 1rem;
     border: none !important;
-    color: rgba(0,0,0,0.7);
+    color: rgba(0, 0, 0, 0.7);
 }
 
 .Post .comment .cmnt[placeholder]:empty:before {
     content: attr(placeholder);
-    color: rgba(0,0,0,0.7);
+    color: rgba(0, 0, 0, 0.7);
 }
 
 /* Post :: Captions area */
-.Post .caption{
+.Post .caption {
     padding: 0.5rem 1rem;
 }
-.Post .caption p{
+
+.Post .caption p {
     margin: 0.5rem 0;
 }
-.Post .caption .like{
-    color : #262626;
+
+.Post .caption .like {
+    color: #262626;
     font-weight: 600;
     font-size: 14px;
 }
-.Post .caption .total{
-    color : #8E8E8E;
+
+.Post .caption .total {
+    color: #8E8E8E;
     font-size: 14px;
 }
-.Post .caption .time{
-    color : #8E8E8E;
+
+.Post .caption .time {
+    color: #8E8E8E;
     font-size: 10px;
 }
 
 /* Modal :: More */
-.more{
+.more {
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -98,12 +105,14 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
+    z-index: 100;
 }
-.more > a {
+
+.more>a {
     padding: 14px;
     font-size: 14px;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     width: 100%;
     text-align: center;
 }
