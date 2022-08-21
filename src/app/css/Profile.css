@@ -31,13 +31,31 @@
     width: -webkit-fill-available; */
 }
 
-#Profile .right .nameBtns {}
+#Profile .right .nameBtns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 #Profile .right .username {
     font-size: 28px;
 }
 
-#Profile .right .btns {}
+#Profile .right .nameBtns {}
+
+#Profile .right .nameBtns span {}
+
+#Profile .right .nameBtns button {
+    padding: 6px 9px;
+    background: transparent;
+    border: 1px solid gainsboro;
+    border-radius: 3px;
+    height: 32px;
+}
+
+#Profile .right .nameBtns button svg {}
+
+#Profile .right .btnnameBtnss>svg {}
 
 #Profile .right .numbers {
     margin: 17px 0;
