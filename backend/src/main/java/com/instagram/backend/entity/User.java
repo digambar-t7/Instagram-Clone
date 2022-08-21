@@ -18,6 +18,7 @@ public class User {
     @Id
     private String username;
     private String password;
+    private String role;
     private String firstName;
     private String lastName;
     private String email;
@@ -29,4 +30,5 @@ public class User {
     private int countOfFollowing;
     @Lob
     private byte[] profilePic;
+
 }

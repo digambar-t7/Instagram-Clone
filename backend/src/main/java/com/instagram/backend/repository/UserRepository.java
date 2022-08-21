@@ -7,5 +7,5 @@ import com.instagram.backend.entity.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
-
+    public User findByUsername(String username);
 }
