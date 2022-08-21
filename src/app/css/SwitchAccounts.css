@@ -1,0 +1,36 @@
+#SwitchAccounts .footer {
+    border-top: 1px solid gainsboro;
+}
+
+#SwitchAccounts .footer h4 {
+    padding: 12px;
+    text-align: center;
+    color: #0095f6;
+    margin: 0;
+}
+
+#SwitchAccounts .main {
+    display: flex;
+    flex-direction: column;
+}
+
+#SwitchAccounts .main .account {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+#SwitchAccounts .main .account span {
+    padding: 7px 10px;
+    height: 100%;
+}
+
+#SwitchAccounts .main .account span img {
+    width: 60px;
+    border-radius: 50%;
+}
+
+#SwitchAccounts .main .account .accName {
+    /* width: 100%; */
+}

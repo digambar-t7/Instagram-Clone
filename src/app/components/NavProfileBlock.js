@@ -1,9 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import '../css/NavProfileBlock.css';
+import SwitchAccounts from './SwitchAccounts';
 const NavProfileBlock = () => {
-    return (
-        <div id='NavProfileBlock'>
+    const handleSwitchAccounts = () => {
+        document.getElementById('SwitchAccounts').style.display = "block";
+        toggleNavProfileBlock();
+    }
+
+    const toggleNavProfileBlock = () => {
+        let navProfileBlock = document.getElementById("NavProfileBlock");
+        if (navProfileBlock.style.display === "none" || navProfileBlock.style.display === "") {
+            navProfileBlock.style.display = "block";
+        } else {
+            navProfileBlock.style.display = "none";
+        }
+
+    }
+    return (<div>
+        <div id='NavProfileBlock' >
             <Link to={"/my-profile-page"}>
                 <div>
                     <svg aria-label="Profile" className="_ab6-" color="#262626" fill="#262626" height="16" role="img" viewBox="0 0 24 24" width="16"><circle cx="12.004" cy="12.004" fill="none" r="10.5" stroke="currentColor" strokeLinecap="round" strokeMiterlimit="10" strokeWidth="2"></circle><path d="M18.793 20.014a6.08 6.08 0 00-1.778-2.447 3.991 3.991 0 00-2.386-.791H9.38a3.994 3.994 0 00-2.386.791 6.09 6.09 0 00-1.779 2.447" fill="none" stroke="currentColor" strokeLinecap="round" strokeMiterlimit="10" strokeWidth="2"></path><circle cx="12.006" cy="9.718" fill="none" r="4.109" stroke="currentColor" strokeLinecap="round" strokeMiterlimit="10" strokeWidth="2"></circle></svg>
@@ -22,14 +37,17 @@ const NavProfileBlock = () => {
                     Settings
                 </div>
             </Link>
-            <Link to={"/my-profile-page"}>
-                <div>
-                    <svg aria-label="Switch accounts" className="_ab6-" color="#262626" fill="#262626" height="16" role="img" viewBox="0 0 24 24" width="16"><path d="M8 8.363a1 1 0 00-1-1H4.31a8.977 8.977 0 0114.054-1.727 1 1 0 101.414-1.414A11.003 11.003 0 003 5.672V3.363a1 1 0 10-2 0v5a1 1 0 001 1h5a1 1 0 001-1zm14 6.274h-5a1 1 0 000 2h2.69a8.977 8.977 0 01-14.054 1.727 1 1 0 00-1.414 1.414A11.004 11.004 0 0021 18.33v2.307a1 1 0 002 0v-5a1 1 0 00-1-1z"></path></svg>
-                    Switch Accounts
-                </div>
-            </Link>
+            {/* <Link > */}
+            <div onClick={handleSwitchAccounts}>
+                <svg aria-label="Switch accounts" className="_ab6-" color="#262626" fill="#262626" height="16" role="img" viewBox="0 0 24 24" width="16"><path d="M8 8.363a1 1 0 00-1-1H4.31a8.977 8.977 0 0114.054-1.727 1 1 0 101.414-1.414A11.003 11.003 0 003 5.672V3.363a1 1 0 10-2 0v5a1 1 0 001 1h5a1 1 0 001-1zm14 6.274h-5a1 1 0 000 2h2.69a8.977 8.977 0 01-14.054 1.727 1 1 0 00-1.414 1.414A11.004 11.004 0 0021 18.33v2.307a1 1 0 002 0v-5a1 1 0 00-1-1z"></path></svg>
+                Switch Accounts
+            </div>
+            {/* </Link> */}
             <div className='logOut' >Log Out</div>
+
         </div>
+        <SwitchAccounts />
+    </div>
     )
 }
 

@@ -82,7 +82,7 @@
 }
 
 /* Adding a post */
-#Navbar .addpost {
+/* #Navbar .addpost {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -95,14 +95,11 @@
     z-index: 10;
 }
 
-#Navbar .addpost .header {
+ #Navbar .addpost .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 10px;
-}
-
-#Navbar .addpost .header {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -135,7 +132,7 @@
     top: -15%;
     right: -97%;
     cursor: pointer;
-}
+} */
 
 #Navbar #profile-tab {
     width: 24px;

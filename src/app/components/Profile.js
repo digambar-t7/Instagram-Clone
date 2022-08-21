@@ -2,6 +2,7 @@ import React from 'react'
 import '../css/Profile.css'
 import Footer from './Footer';
 import Stories from './Stories';
+import SwitchAccounts from './SwitchAccounts';
 
 const Profile = () => {
     return (
@@ -65,6 +66,7 @@ const Profile = () => {
                 </div>
             </div>
             <Footer />
+            <SwitchAccounts />
         </div>
     )
 }
