@@ -17,7 +17,7 @@ import com.instagram.backend.service.UserService;
 @RequestMapping("api/v1/user")
 public class UserController {
 
-    UserService userService;
+    private UserService userService;
 
     public UserController(UserService userService) {
         this.userService = userService;
@@ -32,4 +32,5 @@ public class UserController {
         User newUser = this.userService.registerNewUser(profilePic, userData);
         return ResponseEntity.status(HttpStatus.CREATED).body(newUser);
     }
+
 }
