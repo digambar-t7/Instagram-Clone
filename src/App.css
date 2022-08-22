@@ -73,7 +73,7 @@ svg {
     align-items: center;
 }
 
-.modal .dragger button {
+.blue-btn {
     background-color: #0095f6;
     color: #fff;
     border: none;

@@ -1,3 +1,40 @@
 #Login {
-    color: red;
+    height: 100vh;
+    width: 100vw;
+}
+
+#Login div {
+    border: 2px solid black;
+    border-radius: 33px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 36px;
+}
+
+#Login div .inform {
+    margin: 10px 0;
+}
+
+#Login div img {
+    width: 191px;
+}
+
+#Login div input {
+    padding: 10px;
+    border: 1px solid gainsboro;
+    border-radius: 2px;
+    background: #FAFAFA;
+    font-size: 16px;
+    width: 244px;
+    color: rgb(0, 0, 0, 0.7);
+}
+
+#Login div .frgtpwd {
+    color: #00376B;
+}
+
+#Login div button {
+    width: 244px;
 }
