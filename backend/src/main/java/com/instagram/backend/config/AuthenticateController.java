@@ -27,7 +27,7 @@ public class AuthenticateController {
     @Autowired
     private JwtUtil jwtUtil;
 
-    @PostMapping("/api/v1/generate-token")
+    @PostMapping("/generate-token")
     public ResponseEntity<?> generateToken(@RequestBody JwtRequest jwtRequest) {
         try {
             this.authenticate(jwtRequest.getUsername(), jwtRequest.getPassword());
@@ -41,7 +41,7 @@ public class AuthenticateController {
 
     private void authenticate(String username, String password) {
         try {
-            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
+            this.authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
         } catch (DisabledException e) {
             System.out.println("User is Disabled : " + e.getMessage());
         } catch (BadCredentialsException e) {

@@ -9,25 +9,18 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-
-import com.instagram.backend.serviceimpl.MyUserDetailsServiceImpl;
 
 @Configuration
 @EnableWebSecurity
 public class MySecurityConfig {
 
     @Autowired
-    MyUserDetailsServiceImpl myUserDetailsServiceImpl;
+    private JwtAuthenticationEntryPoint unauthorizedHandler;
 
     @Autowired
-    JwtAuthenticationEntryPoint unauthorizedHandler;
-
-    @Autowired
-    JwtAuthenticationFilter jwtAuthenticationFilter;
+    private JwtAuthenticationFilter jwtAuthenticationFilter;
 
     // Authentication Config : build an AuthenticationManager using it's builder
     // class to carry out Authentications
@@ -41,27 +34,22 @@ public class MySecurityConfig {
     protected SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .cors().and().csrf().disable()
-                .exceptionHandling().authenticationEntryPoint(unauthorizedHandler)
+                .exceptionHandling().authenticationEntryPoint(this.unauthorizedHandler)
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
                 // .antMatchers("/user/**").hasRole("USER")
-                .antMatchers("api/v1/**", "/user/register", "/generate-token").permitAll()
+                .antMatchers("/api/v1/user/register", "/api/v1/user/login", "/generate-token").permitAll()
                 .anyRequest()
                 .authenticated();
-        // adding a beforFilter : to filter the request before being processed
-        http.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+        // adding a beforeFilter : to filter the request before being processed
+        http.addFilterBefore(this.jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder() {
-        return NoOpPasswordEncoder.getInstance();
-    }
-
-    @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
-        return new BCryptPasswordEncoder();
+        return new BCryptPasswordEncoder(10);
     }
 }
