@@ -10,7 +10,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 public class MyUserDetails implements UserDetails {
 
-    User user;
+    private User user;
 
     public MyUserDetails(User user) {
         this.user = user;
@@ -51,6 +51,14 @@ public class MyUserDetails implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
 }

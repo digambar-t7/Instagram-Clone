@@ -1,10 +1,14 @@
 package com.instagram.backend.entity;
 
 import java.util.Date;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Data;
@@ -30,4 +34,7 @@ public class User {
     @Lob
     private byte[] profilePic;
 
+    @JsonBackReference
+    @OneToMany(mappedBy = "owner")
+    private List<Post> posts;
 }
