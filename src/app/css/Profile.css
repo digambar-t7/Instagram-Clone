@@ -113,6 +113,10 @@
     font-weight: 600;
 }
 
+#Profile #content-container .type div:hover {
+    font-weight: 800;
+}
+
 #Profile #content-container .type div::after {
     border-top: 1px solid;
 }

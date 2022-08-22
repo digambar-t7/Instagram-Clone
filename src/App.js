@@ -9,28 +9,31 @@ import Profile from './app/components/Profile';
 import RegisterUser from "./app/components/RegisterUser";
 import WithNav from "./app/components/WithNav";
 import WithoutNav from "./app/components/WithoutNav";
+import PostState from "./app/context/Post/PostState";
 
 function App() {
 
 
   return (
-    <BrowserRouter>
+    <PostState>
+      <BrowserRouter>
 
-      <Routes>
+        <Routes>
 
-        <Route element={<WithoutNav />}>
-          <Route strict path="/login" element={<Login />} />
-          <Route strict path="/register" element={<RegisterUser />} />
-        </Route>
+          <Route element={<WithoutNav />}>
+            <Route strict path="/login" element={<Login />} />
+            <Route strict path="/register" element={<RegisterUser />} />
+          </Route>
 
-        <Route element={<WithNav />} >
-          <Route strict path="/" element={<Home />} />
-          <Route strict path="/my-profile-page" element={<Profile />} />
-        </Route>
+          <Route element={<WithNav />} >
+            <Route strict path="/" element={<Home />} />
+            <Route strict path="/my-profile-page" element={<Profile />} />
+          </Route>
 
-      </Routes>
+        </Routes>
 
-    </BrowserRouter>
+      </BrowserRouter>
+    </PostState>
   );
 }
 

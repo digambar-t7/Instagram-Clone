@@ -4,13 +4,13 @@
 }
 
 #Login div {
-    border: 2px solid black;
     border-radius: 33px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 36px;
+    box-shadow: 0 20px 50px 0 rgb(0 0 0 / 20%);
 }
 
 #Login div .inform {
@@ -33,6 +33,10 @@
 
 #Login div .frgtpwd {
     color: #00376B;
+}
+
+#Login div .frgtpwd:hover {
+    text-decoration: underline;
 }
 
 #Login div button {

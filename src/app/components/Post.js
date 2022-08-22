@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import '../css/Post.css';
 
-const Post = () => {
+const Post = (props) => {
 
     const more_ref = useRef(null);
     const [liked, setLiked] = useState(false);
@@ -23,17 +23,28 @@ const Post = () => {
         setSaved(!saved);
     }
 
+    const getTime = (e) => {
+        const date1 = new Date(e + 'Z');
+        const date2 = new Date(Date.now());
+        const diffTime = Math.abs(date2 - date1);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        if (diffDays < 1) {
+            return diffTime + " milliseconds";
+        }
+        return diffDays + " days";
+    }
+
     return (
         <div className='Post bg'>
             <div className='header'>
                 <div>
                     <img src={require('../images/heart.png')} />
-                    <p style={{ paddingLeft: "13px" }} > <strong> <a href='#' >kali</a> </strong> </p>
+                    <p style={{ paddingLeft: "13px" }} > <strong> <a href='#' >{props.post.owner_username}</a> </strong> </p>
                 </div>
                 <svg onClick={openMore} aria-label="More options" className="_8-yf5 " color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 24 24" width="24"><circle cx="12" cy="12" r="1.5"></circle><circle cx="6" cy="12" r="1.5"></circle><circle cx="18" cy="12" r="1.5"></circle></svg>
             </div>
 
-            <img style={{ width: "-webkit-fill-available" || "608px" }} className='pic' src={require('../images/post/bowl.jpg')} alt='Connection timed out' />
+            <img style={{ width: "-webkit-fill-available" || "608px" }} className='pic' src={`data:image/png;base64,${props.post.picture}`} alt='Connection timed out' />
 
             <div className='icons' >
                 <div>
@@ -51,10 +62,10 @@ const Post = () => {
                 }            </div>
 
             <div className='caption'>
-                <p className='like'>777,144 likes</p>
-                <p className='main'><strong><a href='#'>championsleague</a></strong> Your favourite Manchester United signing by Sir Alex Ferguson❓</p>
+                <p className='like'>{props.post.likes} likes</p>
+                <p className='main'><strong><a href='#'>{props.post.owner_username}</a></strong> {props.post.caption}</p>
                 <p className='total'>View all 40 comments</p>
-                <p className='time'>26 MINUTES AGO</p>
+                <p className='time'>{getTime(props.post.timestamp)}</p>
             </div>
 
             <div className='comment'>
