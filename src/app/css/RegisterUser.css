@@ -1,3 +1,58 @@
 #RegisterUser {
-    color: red;
+    height: 100vh;
+    width: 100vw;
+}
+
+
+#RegisterUser .modal {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 23px;
+    box-shadow: 0 20px 53px 0 rgb(0 0 0 / 20%);
+}
+
+#RegisterUser .modal img {
+    width: 192px;
+}
+
+#RegisterUser .form {
+    border-top: 1px solid #00368B;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 669px;
+}
+
+#RegisterUser .form div {
+    width: 47%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 7px;
+}
+
+#RegisterUser .form div label {
+    padding: 6px;
+}
+
+#RegisterUser .form div input {
+    padding: 8px 12px;
+    font-size: 15px;
+    border: 0.5px solid rgb(0, 0, 0, 0.1);
+    background: rgb(0, 0, 0, 0.01);
+    border-radius: 4px;
+}
+
+#RegisterUser .form .bio-div {
+    width: 100%;
+}
+
+#RegisterUser button {
+    width: 29%;
+    padding: 9px;
+    font-size: 18px;
 }
