@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.instagram.backend.entity.MyUserDetails;
 import com.instagram.backend.entity.Post;
 import com.instagram.backend.exception.CurrentUserUnauthorizedException;
+import com.instagram.backend.exception.PostNotFoundException;
 import com.instagram.backend.service.PostService;
 
 @RestController
@@ -44,7 +46,6 @@ public class PostController {
     @PostMapping("add")
     public ResponseEntity<String> addPost(@AuthenticationPrincipal MyUserDetails loggedUser,
             @RequestParam("file") MultipartFile file, @RequestParam("postData") String postData) throws Exception {
-        System.out.println("------------------------INSIDE POST CONTROLLER--------------------");
         this.postService.addPost(loggedUser, file, postData);
         return ResponseEntity.ok("Successfully added a new Post");
     }
@@ -57,6 +58,16 @@ public class PostController {
             return ResponseEntity.ok("Successfull!!! Post deletion.");
         }
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("UNSUCCESSFULL!!! Post deletion");
+    }
+
+    @PutMapping("like/{postId}")
+    public void likeAPost(@PathVariable("postId") int postId) throws PostNotFoundException {
+        this.postService.likeAPost(postId);
+    }
+
+    @PutMapping("unlike/{postId}")
+    public void unlikeAPost(@PathVariable("postId") int postId) throws PostNotFoundException {
+        this.postService.unlikeAPost(postId);
     }
 
 }

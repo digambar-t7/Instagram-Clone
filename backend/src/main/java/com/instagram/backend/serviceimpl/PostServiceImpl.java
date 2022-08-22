@@ -12,6 +12,7 @@ import com.instagram.backend.entity.MyUserDetails;
 import com.instagram.backend.entity.Post;
 import com.instagram.backend.entity.User;
 import com.instagram.backend.exception.CurrentUserUnauthorizedException;
+import com.instagram.backend.exception.PostNotFoundException;
 import com.instagram.backend.repository.PostRepository;
 import com.instagram.backend.repository.UserRepository;
 import com.instagram.backend.service.PostService;
@@ -64,6 +65,22 @@ public class PostServiceImpl implements PostService {
     @Override
     public List<Post> getAllPosts() {
         return this.postRepository.findAll();
+    }
+
+    @Override
+    public void likeAPost(int postId) throws PostNotFoundException {
+        Post post = this.postRepository.findById(postId)
+                .orElseThrow(() -> new PostNotFoundException("Requested Post not found"));
+        post.setLikes(post.getLikes() + 1);
+        this.postRepository.save(post);
+    }
+
+    @Override
+    public void unlikeAPost(int postId) throws PostNotFoundException {
+        Post post = this.postRepository.findById(postId)
+                .orElseThrow(() -> new PostNotFoundException("Requested Post not found"));
+        post.setLikes(post.getLikes() - 1);
+        this.postRepository.save(post);
     }
 
 }
