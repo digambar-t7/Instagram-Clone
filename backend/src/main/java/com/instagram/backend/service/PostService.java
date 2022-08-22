@@ -12,7 +12,7 @@ public interface PostService {
 
     void addPost(MyUserDetails loggedUser, MultipartFile file, String postData) throws Exception;
 
-    List<Post> getPostsByUser(MyUserDetails loggedUser);
+    List<Post> getPostsByUser(String username, MyUserDetails loggedUser);
 
     boolean deletePost(int postId, MyUserDetails loggedUser) throws CurrentUserUnauthorizedException;
 

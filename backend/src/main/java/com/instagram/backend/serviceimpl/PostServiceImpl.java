@@ -13,15 +13,18 @@ import com.instagram.backend.entity.Post;
 import com.instagram.backend.entity.User;
 import com.instagram.backend.exception.CurrentUserUnauthorizedException;
 import com.instagram.backend.repository.PostRepository;
+import com.instagram.backend.repository.UserRepository;
 import com.instagram.backend.service.PostService;
 
 @Service
 public class PostServiceImpl implements PostService {
 
     private PostRepository postRepository;
+    private UserRepository userRepository;
 
-    public PostServiceImpl(PostRepository postRepository) {
+    public PostServiceImpl(PostRepository postRepository, UserRepository userRepository) {
         this.postRepository = postRepository;
+        this.userRepository = userRepository;
     }
 
     @Override
@@ -35,8 +38,13 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public List<Post> getPostsByUser(MyUserDetails loggedUser) {
-        return this.postRepository.findAllByOwnerUsername(loggedUser.getUsername());
+    public List<Post> getPostsByUser(String username, MyUserDetails loggedUser) {
+        Optional<User> userOpt = this.userRepository.findById(username);
+        if (userOpt.isEmpty()) {
+            return null;
+        }
+        return userOpt.get().getPosts();
+        // return this.postRepository.findAllByOwnerUsername(username);
     }
 
     @Override

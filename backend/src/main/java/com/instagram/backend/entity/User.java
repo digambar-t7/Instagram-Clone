@@ -8,8 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -34,7 +34,7 @@ public class User {
     @Lob
     private byte[] profilePic;
 
-    @JsonBackReference
+    @JsonManagedReference
     @OneToMany(mappedBy = "owner")
     private List<Post> posts;
 }

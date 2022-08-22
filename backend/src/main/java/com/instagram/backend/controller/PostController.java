@@ -29,25 +29,22 @@ public class PostController {
         this.postService = postService;
     }
 
-    // @GetMapping
-    // public String test(@AuthenticationPrincipal MyUserDetails loggedUser) {
-    // return loggedUser.getUsername();
-    // }
-
     @GetMapping("getallposts")
     public ResponseEntity<List<Post>> getAllPosts() {
         return ResponseEntity.ok(this.postService.getAllPosts());
     }
 
-    @GetMapping("getpostsfrom")
-    public ResponseEntity<List<Post>> getPostsByUser(@AuthenticationPrincipal MyUserDetails loggedUser) {
-        List<Post> list = this.postService.getPostsByUser(loggedUser);
+    @GetMapping("getpostsfrom/{username}")
+    public ResponseEntity<List<Post>> getPostsByUser(@AuthenticationPrincipal MyUserDetails loggedUser,
+            @PathVariable("username") String username) {
+        List<Post> list = this.postService.getPostsByUser(username, loggedUser);
         return ResponseEntity.ok(list);
     }
 
     @PostMapping("add")
     public ResponseEntity<String> addPost(@AuthenticationPrincipal MyUserDetails loggedUser,
             @RequestParam("file") MultipartFile file, @RequestParam("postData") String postData) throws Exception {
+        System.out.println("------------------------INSIDE POST CONTROLLER--------------------");
         this.postService.addPost(loggedUser, file, postData);
         return ResponseEntity.ok("Successfully added a new Post");
     }
