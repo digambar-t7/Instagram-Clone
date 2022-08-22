@@ -10,6 +10,7 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,19 +27,23 @@ public class Post {
     private String location;
     private int likes;
     private String caption;
+    @JsonBackReference
+    @ManyToOne
+    private User owner;
     private LocalDateTime timestamp;
 
     @Lob
     private byte[] picture;
 
-    @JsonBackReference
-    @ManyToOne
-    private User owner;
-
     public Post(String location, String caption, byte[] picture) {
         this.location = location;
         this.caption = caption;
         this.picture = picture;
+    }
+
+    @JsonProperty
+    public String getUserId() {
+        return owner == null ? null : owner.getUsername();
     }
 
 }
