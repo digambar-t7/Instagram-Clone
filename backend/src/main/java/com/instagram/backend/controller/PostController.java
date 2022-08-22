@@ -34,7 +34,12 @@ public class PostController {
     // return loggedUser.getUsername();
     // }
 
-    @GetMapping
+    @GetMapping("getallposts")
+    public ResponseEntity<List<Post>> getAllPosts() {
+        return ResponseEntity.ok(this.postService.getAllPosts());
+    }
+
+    @GetMapping("getpostsfrom")
     public ResponseEntity<List<Post>> getPostsByUser(@AuthenticationPrincipal MyUserDetails loggedUser) {
         List<Post> list = this.postService.getPostsByUser(loggedUser);
         return ResponseEntity.ok(list);

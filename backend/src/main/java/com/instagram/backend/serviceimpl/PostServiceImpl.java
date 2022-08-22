@@ -53,4 +53,9 @@ public class PostServiceImpl implements PostService {
         return true;
     }
 
+    @Override
+    public List<Post> getAllPosts() {
+        return this.postRepository.findAll();
+    }
+
 }

@@ -16,4 +16,6 @@ public interface PostService {
 
     boolean deletePost(int postId, MyUserDetails loggedUser) throws CurrentUserUnauthorizedException;
 
+    List<Post> getAllPosts();
+
 }
