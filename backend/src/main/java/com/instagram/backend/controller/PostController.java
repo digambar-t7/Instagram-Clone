@@ -32,6 +32,7 @@ public class PostController {
         this.postService = postService;
     }
 
+    // To enable CORS
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("getallposts")
     public ResponseEntity<List<Post>> getAllPosts() {

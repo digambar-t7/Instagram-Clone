@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User registerNewUser(MultipartFile profilePic, String userData) {
         try {
-            // converting string -> jsonObj -> User Obj
+            // converting jsonString into objOfSpecifiedType
             User newUser = new ObjectMapper().readValue(userData, User.class);
             newUser.setProfilePic(profilePic.getBytes());
             // saving the encrypted password

@@ -34,6 +34,7 @@ public class User {
     @Lob
     private byte[] profilePic;
 
+    // User::Parent , since user consists of multiple posts
     @JsonManagedReference
     @OneToMany(mappedBy = "owner")
     private List<Post> posts;

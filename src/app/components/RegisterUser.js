@@ -73,14 +73,3 @@ const RegisterUser = () => {
 }
 
 export default RegisterUser;
-
-
-//     private String username;
-//     private String password;
-//     private String firstName;
-//     private String lastName;
-//     private String email;
-//     private String bio;
-//     @JsonFormat(pattern = "yyyy-MM-dd")
-//     private Date dob;
-//     private byte[] profilePic;

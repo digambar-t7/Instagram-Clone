@@ -8,6 +8,7 @@ public class JwtRequest {
     private String password;
 
     public JwtRequest() {
+        super();
     }
 
     public JwtRequest(String username, String password) {

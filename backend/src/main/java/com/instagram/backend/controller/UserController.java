@@ -27,8 +27,6 @@ public class UserController {
     public ResponseEntity<User> registerNewUser(@RequestParam("profilePic") MultipartFile profilePic,
             @RequestParam("userData") String userData)
             throws IOException {
-        System.out.println("user : " + userData);
-        System.out.println("profilePic" + profilePic);
         User newUser = this.userService.registerNewUser(profilePic, userData);
         return ResponseEntity.status(HttpStatus.CREATED).body(newUser);
     }

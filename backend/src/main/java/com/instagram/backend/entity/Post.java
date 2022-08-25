@@ -27,6 +27,9 @@ public class Post {
     private String location;
     private int likes;
     private String caption;
+    // Post::Child , since it is ManyToOne
+    // JsonBackReference not serialized the property hence JsonProperty() is used to
+    // add it explicitly to the response body
     @JsonBackReference
     @ManyToOne
     private User owner;
@@ -41,6 +44,7 @@ public class Post {
         this.picture = picture;
     }
 
+    // this will add another property to the response
     @JsonProperty
     public String getUserId() {
         return owner == null ? null : owner.getUsername();
