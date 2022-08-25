@@ -1,7 +1,12 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import UserContext from '../context/User/UserContext';
 import '../css/RegisterUser.css'
 
 const RegisterUser = () => {
+
+    const userContext = useContext(UserContext);
+    const { user, registerUser } = userContext;
+    const [profilePic, setProfilePic] = useState(null);
 
     const [details, setDetails] = useState({
         firstName: '',
@@ -11,16 +16,52 @@ const RegisterUser = () => {
         password: '',
         confirmPassword: '',
         bio: '',
-        dob: '',
-        profilePic: ''
+        dob: ''
     });
+
+    let newUser = {
+        firstName: '',
+        lastName: '',
+        username: '',
+        email: '',
+        password: '',
+        bio: '',
+        dob: ''
+    };
+
+    const handleProfilePic = (e) => {
+        e.preventDefault();
+        setProfilePic(e.target.file[0]);
+    }
 
     const handleDetails = (e) => {
         setDetails({ ...details, [e.target.name]: e.target.value });
     }
 
     const handleSignup = () => {
-        console.log(details);
+        const formData = new FormData();
+        formData.append("profilePic", jsonBlob(profilePic));
+        userConverter(details);
+        formData.append("userData", JSON.stringify(newUser));
+        registerUser(formData)
+        localStorage.setItem('insta-user', JSON.stringify(user));
+    }
+
+    // Converts selectedImage to blob format
+    const jsonBlob = (obj) => {
+        return new Blob([JSON.stringify(obj)], {
+            type: "application/json",
+        });
+    }
+
+    const userConverter = (details) => {
+        newUser.username = details.username;
+        newUser.firstName = details.firstName;
+        newUser.lastName = details.lastName;
+        newUser.email = details.email;
+        newUser.dob = details.dob;
+        newUser.password = details.password;
+        newUser.bio = details.bio;
     }
 
     return (
@@ -59,7 +100,7 @@ const RegisterUser = () => {
                     </div>
                     <div>
                         <label>Profile Pic</label>
-                        <input type="file" name='profilePic' value={details.profilePic} onChange={handleDetails} />
+                        <input type="file" name='profilePic' value={profilePic} onChange={handleProfilePic} />
                     </div>
                     <div className='bio-div'>
                         <label>Add to your bio</label>
