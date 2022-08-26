@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import UserContext from '../context/User/UserContext';
 import '../css/Login.css';
 
 const Login = () => {
+
+    const userContext = useContext(UserContext);
+    const { user, generateToken } = userContext;
 
     const [loginDetails, SetloginDetails] = useState({
         username: "",
@@ -14,7 +18,7 @@ const Login = () => {
     }
 
     const handleLogin = () => {
-        console.log(loginDetails);
+        generateToken(loginDetails);
     }
 
     return (

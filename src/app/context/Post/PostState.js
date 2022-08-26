@@ -12,7 +12,7 @@ const PostState = (props) => {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": "Bearer " + "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZW1vIiwiZXhwIjoxNjYxNDcxNjQ0LCJpYXQiOjE2NjE0MzU2NDR9.19mTgpfBWo0QPpXdTkdxUXKw3bpEAUwRAZM3CDeiguQ"
+                "Authorization": "Bearer " + "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhaXNodUQiLCJleHAiOjE2NjE1NDA4MDcsImlhdCI6MTY2MTUwNDgwN30.zn9bQdn9W6UwOpjVeuWqvmVF03TVyLtJLnsdA1lIqck"
             }
         });
         const json = await response.json();
