@@ -5,6 +5,7 @@ const PostState = (props) => {
 
     const host = "http://localhost:8080/api/v1/post/"
     const [posts, setPosts] = useState([]);
+    const [profilePosts, setProfilePosts] = useState([]);
 
     // GET : getAllPosts
     const getAllPosts = async () => {
@@ -12,16 +13,29 @@ const PostState = (props) => {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": "Bearer " + "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhaXNodUQiLCJleHAiOjE2NjE1NDA4MDcsImlhdCI6MTY2MTUwNDgwN30.zn9bQdn9W6UwOpjVeuWqvmVF03TVyLtJLnsdA1lIqck"
+                // "Authorization": "Bearer " + "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhaXNodUQiLCJleHAiOjE2NjE1NDA4MDcsImlhdCI6MTY2MTUwNDgwN30.zn9bQdn9W6UwOpjVeuWqvmVF03TVyLtJLnsdA1lIqck"
+                "Authorization": "Bearer " + localStorage.getItem('insta-user-token')
             }
         });
         const json = await response.json();
         setPosts(json);
     }
 
+    // GET : getPostsFrom
+    const getPostsFromUser = async () => {
+        const response = await fetch(`${host}getpostsfrom/aishuD`, {
+            method: "GET",
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem('insta-user-token')
+            }
+        });
+        const json = await response.json();
+        setProfilePosts(json)
+    }
+
 
     return (
-        <PostContext.Provider value={{ posts, getAllPosts }}>
+        <PostContext.Provider value={{ posts, profilePosts, getAllPosts, getPostsFromUser }}>
             {props.children}
         </PostContext.Provider>
     )

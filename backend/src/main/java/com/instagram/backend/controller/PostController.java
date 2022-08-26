@@ -24,6 +24,8 @@ import com.instagram.backend.service.PostService;
 
 @RestController
 @RequestMapping("api/v1/post")
+// To enable CORS
+@CrossOrigin(origins = "http://localhost:3000")
 public class PostController {
 
     private PostService postService;
@@ -32,8 +34,6 @@ public class PostController {
         this.postService = postService;
     }
 
-    // To enable CORS
-    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("getallposts")
     public ResponseEntity<List<Post>> getAllPosts() {
         return ResponseEntity.ok(this.postService.getAllPosts());

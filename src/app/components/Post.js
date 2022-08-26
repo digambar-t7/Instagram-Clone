@@ -17,7 +17,8 @@ const Post = (props) => {
     }
 
     const handleLike = () => {
-        setLiked(!liked);
+        // setLiked(!liked);
+        console.log(props.post.picture)
     }
     const handleSave = () => {
         setSaved(!saved);
