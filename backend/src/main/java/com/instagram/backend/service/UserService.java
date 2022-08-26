@@ -8,4 +8,6 @@ public interface UserService {
 
     User registerNewUser(MultipartFile profilePic, String userData);
 
+    User getUserByUsername(String username);
+
 }

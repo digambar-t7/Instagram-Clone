@@ -3,7 +3,9 @@ package com.instagram.backend.entity;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.OneToMany;
@@ -36,6 +38,6 @@ public class User {
 
     // User::Parent , since user consists of multiple posts
     @JsonManagedReference
-    @OneToMany(mappedBy = "owner")
+    @OneToMany(mappedBy = "owner", fetch = FetchType.EAGER)
     private List<Post> posts;
 }

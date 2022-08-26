@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import UserContext from '../context/User/UserContext';
 import '../css/Login.css';
@@ -27,7 +27,7 @@ const Login = () => {
                 <img className='inform' alt='instagram-logo' src={require("../images/instagram.png")} />
                 <input className='inform' placeholder='Enter username or email' type="text" name='username' value={loginDetails.username} onChange={handleLoginDetails} />
                 <input className='inform' placeholder='Enter password' type="password" name='password' value={loginDetails.password} onChange={handleLoginDetails} />
-                <button className='inform blue-btn' onClick={handleLogin} >Log in</button>
+                <a ><button className='inform blue-btn' onClick={handleLogin}  >Log in</button></a>
                 <Link className='frgtpwd inform' to={"/forgotpassword"}>Forgot password?</Link>
             </div>
         </div>

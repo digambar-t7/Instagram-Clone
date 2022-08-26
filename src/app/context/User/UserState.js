@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import UserContext from './UserContext';
 
 const UserState = (props) => {
 
-    const [user, setUser] = useState({});
+    const [user, setUser] = useState('');
     const host = "http://localhost:8080/api/v1/user/";
 
     // POST : Register a user
@@ -28,7 +28,15 @@ const UserState = (props) => {
         const json = await response.json();
         setUser(json.user)
         localStorage.setItem("insta-user-token", json.token);
+        console.log(" generate token user")
+        console.log(user)
     }
+
+    useEffect(() => {
+        console.log("user");
+        console.log(user);
+    }, [user])
+
 
     return (
         <UserContext.Provider value={{ user, registerUser, generateToken }} >

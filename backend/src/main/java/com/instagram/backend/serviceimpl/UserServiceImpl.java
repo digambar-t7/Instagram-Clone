@@ -1,5 +1,7 @@
 package com.instagram.backend.serviceimpl;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -33,6 +35,11 @@ public class UserServiceImpl implements UserService {
             e.printStackTrace();
             throw new IllegalStateException(e.getMessage());
         }
+    }
+
+    @Override
+    public User getUserByUsername(String username) {
+        return this.userRepository.findByUsername(username);
     }
 
 }
