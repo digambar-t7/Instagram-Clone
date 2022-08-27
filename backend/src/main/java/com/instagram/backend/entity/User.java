@@ -2,17 +2,19 @@ package com.instagram.backend.entity;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
@@ -35,10 +37,13 @@ public class User {
     @Lob
     private byte[] profilePic;
 
-    // User::Parent , since user consists of multiple posts
+    // User::Parent , since user consists of multiple posts bcoz OneToMany
     @JsonManagedReference
     @OneToMany(mappedBy = "owner", fetch = FetchType.EAGER)
     private List<Post> posts;
+
+    @ManyToMany(mappedBy = "users", fetch = FetchType.EAGER)
+    private Set<Friend> friends;
 
     public String getUsername() {
         return username;
