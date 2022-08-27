@@ -16,6 +16,7 @@ const Profile = () => {
 
     useEffect(() => {
         // needed in case we do raw reloading of the site
+        // if (user == null)
         getUserByToken()
     }, [])
 
@@ -29,7 +30,7 @@ const Profile = () => {
             {/* Bio Section */}
             <div className='bio'>
                 <div className='left'>
-                    <img src={`data:image/png;base64,${user.profilePic}`} ></img>
+                    <img src={`data:image/png;base64,${user.profilePic}`} alt='Profile pic' ></img>
                 </div>
                 <div className='right'>
                     <div className='nameBtns'>
@@ -65,7 +66,7 @@ const Profile = () => {
                 <div className='body'>
                     {profilePosts.map((post) => {
                         return <div key={post.id} className='piece'>
-                            <img src={`data:image/png;base64,${post.picture}`}></img>
+                            <img alt='Post loading...' src={`data:image/png;base64,${post.picture}`}></img>
                             <div className='cover'></div>
                         </div>
                     })}

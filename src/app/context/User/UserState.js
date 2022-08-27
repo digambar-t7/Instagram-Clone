@@ -29,8 +29,6 @@ const UserState = (props) => {
         const json = await response.json();
         setUser(json.user)
         localStorage.setItem("insta-user-token", json.token);
-        console.log(" generate token user")
-        console.log(user)
     }
 
     // GET : get user by username

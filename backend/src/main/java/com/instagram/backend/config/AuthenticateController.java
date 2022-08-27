@@ -19,7 +19,6 @@ import com.instagram.backend.entity.JwtRequest;
 import com.instagram.backend.entity.JwtResponse;
 import com.instagram.backend.entity.MyUserDetails;
 import com.instagram.backend.entity.User;
-import com.instagram.backend.serviceimpl.MyUserDetailsServiceImpl;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
@@ -30,7 +29,6 @@ public class AuthenticateController {
 
     @Autowired
     private UserDetailsService userDetailsService;
-    private MyUserDetailsServiceImpl myUserDetailsServiceImpl;
 
     @Autowired
     private JwtUtil jwtUtil;

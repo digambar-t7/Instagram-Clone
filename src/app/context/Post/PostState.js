@@ -34,8 +34,9 @@ const PostState = (props) => {
     }
 
     useEffect(() => {
-        console.log("set profile posts completed")
-        console.log(profilePosts)
+        if (profilePosts.length !== 0) {
+            console.log("SUCCESS! Profile posts loaded")
+        }
     }, [profilePosts])
 
 

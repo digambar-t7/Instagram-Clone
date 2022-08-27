@@ -30,7 +30,7 @@ function App() {
 
             <Route element={<WithNav />} >
               <Route strict path="/" element={<Home />} />
-              <Route strict path="/my-profile-page" element={<Profile />} />
+              <Route strict path="/profile" element={<Profile />} />
             </Route>
 
           </Routes>
