@@ -31,7 +31,7 @@ public class UserController {
 
     @GetMapping("/bytoken")
     public ResponseEntity<?> getUserByToken(@AuthenticationPrincipal MyUserDetails loggedUser) {
-        User user = loggedUser.getUser();
+        User user = this.userService.getUserByToken(loggedUser);
         return ResponseEntity.ok(user);
     }
 

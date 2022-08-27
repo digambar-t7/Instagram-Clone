@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import PostContext from './PostContext';
 
 const PostState = (props) => {
@@ -22,8 +22,8 @@ const PostState = (props) => {
     }
 
     // GET : getPostsFrom
-    const getPostsFromUser = async () => {
-        const response = await fetch(`${host}getpostsfrom/aishuD`, {
+    const getPostsFromUser = async (username) => {
+        const response = await fetch(`${host}getpostsfrom/${username}`, {
             method: "GET",
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem('insta-user-token')
@@ -32,6 +32,12 @@ const PostState = (props) => {
         const json = await response.json();
         setProfilePosts(json)
     }
+
+    useEffect(() => {
+        console.log("set profile posts completed")
+        console.log(profilePosts)
+    }, [profilePosts])
+
 
 
     return (

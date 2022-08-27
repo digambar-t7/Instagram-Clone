@@ -40,7 +40,7 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public List<Post> getPostsByUser(String username, MyUserDetails loggedUser) {
-        // loggedUser -> to check if he is friend of targetUser (auth purposes)
+        // loggedUser -> to check if he is friend of targetUser (privateUser check)
         Optional<User> userOpt = this.userRepository.findById(username);
         if (userOpt.isEmpty()) {
             return null;
