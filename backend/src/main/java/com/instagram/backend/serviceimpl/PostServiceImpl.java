@@ -36,6 +36,8 @@ public class PostServiceImpl implements PostService {
         User owner = loggedUser.getUser();
         newPost.setOwner(owner);
         this.postRepository.save(newPost);
+        owner.setCountOfPosts(owner.getPosts().size());
+        this.userRepository.save(owner);
     }
 
     @Override
@@ -56,10 +58,13 @@ public class PostServiceImpl implements PostService {
             return false;
         }
         Post post = postOpt.get();
-        if (!post.getOwner().getUsername().equals(loggedUser.getUsername())) {
+        User user = loggedUser.getUser();
+        if (!post.getOwner().getUsername().equals(user.getUsername())) {
             throw new CurrentUserUnauthorizedException("You are not authorized to delete this post");
         }
         this.postRepository.deleteById(postId);
+        user.setCountOfPosts(user.getPosts().size());
+        this.userRepository.save(user);
         return true;
     }
 
