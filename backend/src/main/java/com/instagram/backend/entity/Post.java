@@ -28,7 +28,7 @@ public class Post {
     private int likes;
     private String caption;
     // Post::Child , since it is ManyToOne
-    // JsonBackReference not serialized the property hence JsonProperty() is used to
+    // JsonBackReference not serializes the property hence JsonProperty() is used to
     // add it explicitly to the response body
     @JsonBackReference
     @ManyToOne

@@ -1,65 +1,76 @@
 package com.instagram.backend.entity;
 
+import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
 public class Friend {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String username;
+    private String friendName;
 
-    @ManyToMany
-    private Set<User> users;
+    @JsonBackReference
+    @ManyToMany(mappedBy = "friends", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<User> users = new HashSet<>();
 
     public Friend() {
         super();
     }
 
     public Friend(String username) {
-        this.username = username;
+        this.friendName = username;
     }
 
     public Friend(String username, Set<User> users) {
-        this.username = username;
+        this.friendName = username;
         this.users = users;
     }
 
     public Friend(int id, String username, Set<User> users) {
         this.id = id;
-        this.username = username;
+        this.friendName = username;
         this.users = users;
     }
 
-    public int getId() {
-        return id;
+    @Override
+    public String toString() {
+        return "Friend [" + friendName + "]";
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public Set<User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(Set<User> users) {
-        this.users = users;
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Friend other = (Friend) obj;
+        if (friendName == null) {
+            if (other.friendName != null)
+                return false;
+        } else if (!friendName.equals(other.friendName))
+            return false;
+        if (id != other.id)
+            return false;
+        return true;
     }
 
 }
