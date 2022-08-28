@@ -31,7 +31,7 @@ const UserState = (props) => {
         localStorage.setItem("insta-user-token", json.token);
     }
 
-    // GET : get user by username
+    // GET : get userAccount by username
     const getAccByUsername = async (username) => {
         const response = await fetch(`${host}${username}`, {
             method: "GET",
@@ -65,7 +65,7 @@ const UserState = (props) => {
 
 
     return (
-        <UserContext.Provider value={{ user, acc, registerUser, generateToken, getUserByToken, getUserByUsername: getAccByUsername }} >
+        <UserContext.Provider value={{ user, acc, registerUser, generateToken, getUserByToken, getAccByUsername }} >
             {props.children}
         </UserContext.Provider>
     )
