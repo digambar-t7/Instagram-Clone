@@ -1,11 +1,9 @@
 package com.instagram.backend.serviceimpl;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.instagram.backend.entity.Friend;
@@ -55,7 +53,12 @@ public class FriendsServiceImpl implements FriendsService {
 
         user.getFriends().add(friend);
         user.setFriends(user.getFriends());
+        user.setCountOfFollowing(user.getFriends().size());
         this.userRepository.save(user);
+
+        User user2 = this.userRepository.findByUsername(friendUsername);
+        user2.setCountOfFollowers(friend.getUsers().size() + 1);
+        this.userRepository.save(user2);
 
         return "Successfully! added friend";
     }

@@ -1,6 +1,5 @@
 package com.instagram.backend.controller;
 
-import java.util.List;
 import java.util.Set;
 
 import org.springframework.http.ResponseEntity;
