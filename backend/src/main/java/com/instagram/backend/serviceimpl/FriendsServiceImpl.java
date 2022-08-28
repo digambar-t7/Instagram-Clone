@@ -1,13 +1,18 @@
 package com.instagram.backend.serviceimpl;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.instagram.backend.entity.Friend;
 import com.instagram.backend.entity.MyUserDetails;
 import com.instagram.backend.entity.User;
+import com.instagram.backend.exception.AlreadyAFriendException;
+import com.instagram.backend.exception.UserNotFoundException;
 import com.instagram.backend.repository.FriendsRepository;
 import com.instagram.backend.repository.UserRepository;
 import com.instagram.backend.service.FriendsService;
@@ -23,35 +28,8 @@ public class FriendsServiceImpl implements FriendsService {
         this.friendsRepository = friendsRepository;
     }
 
-    public String addFriend2(String friendUsername, MyUserDetails loggedUserDetails) {
-        User user = this.userRepository.findByUsername(loggedUserDetails.getUsername());
-        Optional<Friend> friendOpt = this.friendsRepository.getByFriendName(friendUsername);
-        Friend friend = null;
-        System.out.println("---------------------------------------");
-        if (friendOpt.isPresent()) {
-            System.out.println("friend  opt used");
-            friend = friendOpt.get();
-        } else {
-            System.out.println("new friend created");
-            friend = new Friend(friendUsername);
-        }
-        // System.out.println(user.getFriends());
-        // System.out.println(friend.getUsers());
-        System.out.println("---------------------------------------");
-        if (user.getFriends().contains(friend)) {
-            return "Failed! already a friend";
-        }
-        user.getFriends().add(friend);
-        friend.getUsers().add(user);
-        // System.out.println(user.getFriends());
-        // System.out.println(friend.getUsers());
-        this.userRepository.save(user);
-        this.friendsRepository.save(friend);
-        return "Successfully! added friend";
-    }
-
     @Override
-    public String addFriend(String friendUsername, MyUserDetails loggedUserDetails) {
+    public String addFriend(String friendUsername, MyUserDetails loggedUserDetails) throws AlreadyAFriendException {
 
         User user = loggedUserDetails.getUser();
         Optional<Friend> friendOptional = this.friendsRepository.getByFriendName(friendUsername);
@@ -71,7 +49,7 @@ public class FriendsServiceImpl implements FriendsService {
 
         for (Friend frnd : user.getFriends()) {
             if (frnd.equals(friend)) {
-                return "Failed! Already a friend";
+                throw new AlreadyAFriendException("You are already friends with " + friendUsername);
             }
         }
 
@@ -80,6 +58,25 @@ public class FriendsServiceImpl implements FriendsService {
         this.userRepository.save(user);
 
         return "Successfully! added friend";
+    }
+
+    @Override
+    public Set<User> getFollowers(String username, MyUserDetails loggedUserDetails) throws UserNotFoundException {
+        Friend friend = this.friendsRepository.getByFriendName(username)
+                .orElseThrow(() -> new UserNotFoundException("Failed! Requested User not found."));
+        return friend.getUsers();
+    }
+
+    @Override
+    public Set<User> getFollowings(String username, MyUserDetails loggedUserDetails) throws UserNotFoundException {
+        User user = this.userRepository.findById(username)
+                .orElseThrow(() -> new UserNotFoundException("Failed! Requested User not found."));
+        Set<User> followings = new HashSet<>();
+        for (Friend friend : user.getFriends()) {
+            User temp = this.userRepository.findByUsername(friend.getFriendName());
+            followings.add(temp);
+        }
+        return followings;
     }
 
 }
