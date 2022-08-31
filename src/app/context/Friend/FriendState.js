@@ -22,7 +22,7 @@ const FriendState = (props) => {
         })
         const json = await response.json()
         console.log(json)
-        getUserByToken()
+        // getUserByToken()
     }
 
     // GET : get followers

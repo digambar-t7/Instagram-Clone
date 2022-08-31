@@ -1,0 +1,48 @@
+#Friends {
+    width: 700px;
+    margin: auto;
+    margin-top: 4.8rem;
+    background: white;
+    display: flex;
+    flex-direction: column;
+}
+
+#Friends .heading {
+    padding: 17px;
+    font-size: 24px;
+    font-weight: 600;
+    margin-left: 21px;
+}
+
+#Friends .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#Friends .block {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 32px;
+}
+
+#Friends .block .inner {
+    display: flex;
+}
+
+#Friends .block .inner img {
+    width: 60px;
+    border-radius: 50%;
+}
+
+#Friends .block .inner .details {
+    color: gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 10px 20px;
+}
+
+#Friends .block button {}

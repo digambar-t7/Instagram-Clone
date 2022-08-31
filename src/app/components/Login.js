@@ -27,10 +27,10 @@ const Login = () => {
                 <input className='inform' placeholder='Enter username or email' type="text" name='username' value={loginDetails.username} onChange={handleLoginDetails} />
                 <input className='inform' placeholder='Enter password' type="password" name='password' value={loginDetails.password} onChange={handleLoginDetails} />
                 <Link to={'/'}>
-                    <button className='inform blue-btn' onClick={handleLogin}  >Log in</button>
+                    <button className='inform blue btn' onClick={handleLogin}  >Log in</button>
                 </Link>
                 {/* <Link to={'/my-profile-page'}>
-                    <button className='inform blue-btn'>Redirect</button>
+                    <button className='inform blue btn'>Redirect</button>
                 </Link> */}
                 <Link className='frgtpwd inform' to={"/forgotpassword"}>Forgot password?</Link>
             </div>

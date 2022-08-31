@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import PostContext from '../context/Post/PostContext';
 import UserContext from '../context/User/UserContext';
 import '../css/Profile.css';
@@ -16,7 +16,9 @@ const Profile = () => {
     const { profilePosts, setProfilePosts, getPostsFromUser } = postContext;
     const { user, acc, getUserByToken, getAccByUsername } = userContext;
 
+
     useEffect(() => {
+        setProfilePosts([])
         getAccByUsername(params.accountId)
         if (params.accountId === acc.username)
             console.log("My Profile")
@@ -45,8 +47,8 @@ const Profile = () => {
                     </div>
                     <div className='numbers'>
                         <span><strong>{acc.countOfPosts}</strong> posts</span>
-                        <span><strong>{acc.countOfFollowers}</strong> followers</span>
-                        <span><strong>{acc.countOfFollowing}</strong> following</span>
+                        <Link to={`/${acc.username}/followers`}><span><strong>{acc.countOfFollowers}</strong> followers</span></Link>
+                        <Link to={`/${acc.username}/following`}><span><strong>{acc.countOfFollowing}</strong> following</span></Link>
                     </div>
                     <p className='name'>{acc.firstName + ' ' + acc.lastName}</p>
                     <div className='text'>{acc.bio}</div>

@@ -73,8 +73,15 @@ svg {
     align-items: center;
 }
 
-.blue-btn {
+.blue {
     background-color: #0095f6;
+}
+
+.gray {
+    background-color: gray;
+}
+
+.btn {
     color: #fff;
     border: none;
     margin-top: 17px;

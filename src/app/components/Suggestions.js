@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Suggestions = () => {
     return (<>
@@ -12,7 +13,7 @@ const Suggestions = () => {
         <div className='mid'>
             <div className='upper'>
                 <span>Suggestions For You</span>
-                <a href='#' style={{ fontWeight: 600, fontSize: "13px" }}>See All</a>
+                <Link to={`/aishuD/suggestions`} style={{ fontWeight: 600, fontSize: "13px" }}>See All Link</Link>
             </div>
 
             <div className='lower'>

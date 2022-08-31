@@ -2,6 +2,7 @@ import {
   BrowserRouter, Route, Routes
 } from "react-router-dom";
 import './App.css';
+import Friends from "./app/components/Friends";
 import Home from './app/components/Home';
 import Login from "./app/components/Login";
 import Profile from './app/components/Profile';
@@ -30,6 +31,7 @@ function App() {
             <Route element={<WithNav />} >
               <Route strict path="/" element={<Home />} />
               <Route strict path="/profile/:accountId" element={<Profile />} />
+              <Route strict path="/:accountId/:type" element={<Friends />} />
             </Route>
 
           </Routes>
