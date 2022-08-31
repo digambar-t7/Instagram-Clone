@@ -48,7 +48,7 @@ const Profile = () => {
                     <div className='numbers'>
                         <span><strong>{acc.countOfPosts}</strong> posts</span>
                         <Link to={`/${acc.username}/followers`}><span><strong>{acc.countOfFollowers}</strong> followers</span></Link>
-                        <Link to={`/${acc.username}/following`}><span><strong>{acc.countOfFollowing}</strong> following</span></Link>
+                        <Link to={`/${acc.username}/followings`}><span><strong>{acc.countOfFollowing}</strong> following</span></Link>
                     </div>
                     <p className='name'>{acc.firstName + ' ' + acc.lastName}</p>
                     <div className='text'>{acc.bio}</div>

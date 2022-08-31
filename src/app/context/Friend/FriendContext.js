@@ -1,5 +1,5 @@
 const { createContext } = require("react");
 
-const friendContext = createContext;
+const FriendContext = createContext();
 
-export default friendContext;
+export default FriendContext;

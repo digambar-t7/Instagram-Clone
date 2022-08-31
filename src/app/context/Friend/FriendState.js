@@ -1,6 +1,6 @@
-import React, { useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import UserContext from '../User/UserContext';
-import './FriendContext'
+import FriendContext from './FriendContext';
 
 const FriendState = (props) => {
 
@@ -26,8 +26,8 @@ const FriendState = (props) => {
     }
 
     // GET : get followers
-    const getFollowers = async (username) => {
-        const response = await fetch(`${host}/getfollowers/${username}`, {
+    const getFollowers = async (username, type) => {
+        const response = await fetch(`${host}/get${type}/${username}`, {
             method: "GET",
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('insta-user-token')
@@ -39,7 +39,7 @@ const FriendState = (props) => {
 
     // GET : get followings
     const getFollowings = async (username) => {
-        const response = await fetch(`${host}/getfollowers/${username}`, {
+        const response = await fetch(`${host}/getfollowings/${username}`, {
             method: "GET",
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('insta-user-token')

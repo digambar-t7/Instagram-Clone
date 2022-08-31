@@ -9,6 +9,7 @@ import Profile from './app/components/Profile';
 import RegisterUser from "./app/components/RegisterUser";
 import WithNav from "./app/components/WithNav";
 import WithoutNav from "./app/components/WithoutNav";
+import FriendState from "./app/context/Friend/FriendState";
 import PostState from "./app/context/Post/PostState";
 import UserState from "./app/context/User/UserState";
 
@@ -16,29 +17,32 @@ function App() {
 
 
   return (
-    <PostState>
-      <UserState>
+    <UserState>
+      <PostState>
+        <FriendState>
 
-        <BrowserRouter>
+          <BrowserRouter>
 
-          <Routes>
+            <Routes>
 
-            <Route element={<WithoutNav />}>
-              <Route strict path="/login" element={<Login />} />
-              <Route strict path="/register" element={<RegisterUser />} />
-            </Route>
+              <Route element={<WithoutNav />}>
+                <Route strict path="/login" element={<Login />} />
+                <Route strict path="/register" element={<RegisterUser />} />
+              </Route>
 
-            <Route element={<WithNav />} >
-              <Route strict path="/" element={<Home />} />
-              <Route strict path="/profile/:accountId" element={<Profile />} />
-              <Route strict path="/:accountId/:type" element={<Friends />} />
-            </Route>
+              <Route element={<WithNav />} >
+                <Route strict path="/" element={<Home />} />
+                <Route strict path="/profile/:accountId" element={<Profile />} />
+                <Route strict path="/:accountId/:type" element={<Friends />} />
+              </Route>
 
-          </Routes>
+            </Routes>
 
-        </BrowserRouter>
-      </UserState>
-    </PostState>
+          </BrowserRouter>
+
+        </FriendState>
+      </PostState>
+    </UserState>
   );
 }
 
