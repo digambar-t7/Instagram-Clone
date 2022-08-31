@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
+import UserContext from '../context/User/UserContext';
 import '../css/Home.css';
 import PostsWindow from './PostsWindow';
 import Stories from './Stories';
 import Suggestions from './Suggestions';
 
 const Home = () => {
+
+    const userContext = useContext(UserContext)
+    const { getUserByToken } = userContext
+
     return (
         <div id='Home'>
             <div className='inner'>

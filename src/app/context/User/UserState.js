@@ -4,7 +4,7 @@ import UserContext from './UserContext';
 const UserState = (props) => {
 
     const [user, setUser] = useState('');
-    const [acc, setAcc] = useState(null);
+    const [acc, setAcc] = useState('');
     const host = "http://localhost:8080/api/v1/user/";
 
     // POST : Register a user
@@ -61,7 +61,14 @@ const UserState = (props) => {
     }
 
     useEffect(() => {
+        console.log("Success!!! user set")
     }, [user])
+
+    useEffect(() => {
+        console.log("Success!!! acc set")
+        console.log("fetched account details : inUseEffect");
+        console.log(acc);
+    }, [acc])
 
 
     return (

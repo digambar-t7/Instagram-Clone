@@ -1,10 +1,9 @@
 import React, { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import UserContext from '../context/User/UserContext';
 import '../css/Login.css';
 
 const Login = () => {
-    let navigator = useNavigate();
     const userContext = useContext(UserContext);
     const { generateToken } = userContext;
 

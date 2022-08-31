@@ -53,18 +53,33 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public boolean deletePost(int postId, MyUserDetails loggedUser) throws CurrentUserUnauthorizedException {
-        Optional<Post> postOpt = this.postRepository.findById(postId);
-        if (postOpt.isEmpty()) {
-            return false;
-        }
-        Post post = postOpt.get();
+        // Optional<Post> postOpt = this.postRepository.findById(postId);
+        // if (postOpt.isEmpty()) {
+        // return false;
+        // }
+        // Post post = postOpt.get();
+        // User user = loggedUser.getUser();
+        // if (!post.getOwner().getUsername().equals(user.getUsername())) {
+        // throw new CurrentUserUnauthorizedException("You are not authorized to delete
+        // this post");
+        // }
+        // user.setCountOfPosts(user.getPosts().size());
+        // this.userRepository.save(user);
+
         User user = loggedUser.getUser();
-        if (!post.getOwner().getUsername().equals(user.getUsername())) {
-            throw new CurrentUserUnauthorizedException("You are not authorized to delete this post");
+        List<Post> list = user.getPosts();
+        System.out.println(list);
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getId() == postId) {
+                list.remove(i);
+                break;
+            }
         }
-        this.postRepository.deleteById(postId);
-        user.setCountOfPosts(user.getPosts().size());
+        System.out.println(list);
+        user.setPosts(list);
+        System.out.println(user.getPosts());
         this.userRepository.save(user);
+        this.postRepository.deleteById(postId);
         return true;
     }
 

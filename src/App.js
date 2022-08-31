@@ -4,7 +4,6 @@ import {
 import './App.css';
 import Home from './app/components/Home';
 import Login from "./app/components/Login";
-import Navbar from './app/components/Navbar';
 import Profile from './app/components/Profile';
 import RegisterUser from "./app/components/RegisterUser";
 import WithNav from "./app/components/WithNav";
@@ -30,7 +29,7 @@ function App() {
 
             <Route element={<WithNav />} >
               <Route strict path="/" element={<Home />} />
-              <Route strict path="/profile" element={<Profile />} />
+              <Route strict path="/profile/:accountId" element={<Profile />} />
             </Route>
 
           </Routes>

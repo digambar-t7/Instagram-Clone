@@ -13,7 +13,6 @@ const PostState = (props) => {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
-                // "Authorization": "Bearer " + "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhaXNodUQiLCJleHAiOjE2NjE1NDA4MDcsImlhdCI6MTY2MTUwNDgwN30.zn9bQdn9W6UwOpjVeuWqvmVF03TVyLtJLnsdA1lIqck"
                 "Authorization": "Bearer " + localStorage.getItem('insta-user-token')
             }
         });
@@ -26,6 +25,7 @@ const PostState = (props) => {
         const response = await fetch(`${host}getpostsfrom/${username}`, {
             method: "GET",
             headers: {
+                "Content-Type": "application/json",
                 "Authorization": "Bearer " + localStorage.getItem('insta-user-token')
             }
         });
@@ -42,7 +42,7 @@ const PostState = (props) => {
 
 
     return (
-        <PostContext.Provider value={{ posts, profilePosts, getAllPosts, getPostsFromUser }}>
+        <PostContext.Provider value={{ posts, profilePosts, setProfilePosts, getAllPosts, getPostsFromUser }}>
             {props.children}
         </PostContext.Provider>
     )

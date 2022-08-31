@@ -50,4 +50,9 @@ public class Post {
         return owner == null ? null : owner.getUsername();
     }
 
+    @Override
+    public String toString() {
+        return "Post [caption=" + caption + ", id=" + id + "]";
+    }
+
 }
