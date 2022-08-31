@@ -7,7 +7,7 @@ const FriendState = (props) => {
     const userContext = useContext(UserContext);
     const { user, getUserByToken } = userContext;
 
-    const [followers, setFollowers] = useState([])
+    const [friends, setFollowers] = useState([])
     const [followings, setFollowings] = useState([])
 
     const host = 'http://localhost:8080/api/v1/friends';
@@ -26,7 +26,8 @@ const FriendState = (props) => {
     }
 
     // GET : get followers
-    const getFollowers = async (username, type) => {
+    const getFriends = async (username, type) => {
+        // type : followers/followings
         const response = await fetch(`${host}/get${type}/${username}`, {
             method: "GET",
             headers: {
@@ -51,7 +52,7 @@ const FriendState = (props) => {
 
 
     return (
-        <FriendContext.Provider value={{ followers, followings, addFriend, getFollowers, getFollowings }}>
+        <FriendContext.Provider value={{ friends, followings, addFriend, getFriends, getFollowings }}>
             {props.children}
         </FriendContext.Provider>
     )

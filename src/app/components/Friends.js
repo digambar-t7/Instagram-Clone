@@ -7,10 +7,10 @@ const Friends = () => {
     const params = useParams();
 
     const friendsContext = useContext(FriendContext);
-    const { followers, getFollowers } = friendsContext;
+    const { followers, getFriends } = friendsContext;
 
     useEffect(() => {
-        getFollowers(params.accountId, params.type);
+        getFriends(params.accountId, params.type);
     }, [])
 
     return (
