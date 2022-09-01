@@ -15,7 +15,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 13px 16px;
+    padding: 4px 16px;
 }
 
 .Post .header>div {
@@ -30,6 +30,10 @@
 
 .Post .header p {
     margin: 7px;
+}
+
+.Post .header .location {
+    font-size: 14px;
 }
 
 /* Post :: like/share btns */

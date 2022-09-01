@@ -13,7 +13,7 @@ const Suggestions = () => {
         <div className='mid'>
             <div className='upper'>
                 <span>Suggestions For You</span>
-                <Link to={`/aishuD/suggestions`} style={{ fontWeight: 600, fontSize: "13px" }}>See All Link</Link>
+                <Link to={`/demo/suggestions`} style={{ fontWeight: 600, fontSize: "13px" }}>See All</Link>
             </div>
 
             <div className='lower'>
