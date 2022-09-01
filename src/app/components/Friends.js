@@ -7,7 +7,7 @@ const Friends = () => {
     const params = useParams();
 
     const friendsContext = useContext(FriendContext);
-    const { followers, getFriends } = friendsContext;
+    const { friends, getFriends } = friendsContext;
 
     useEffect(() => {
         getFriends(params.accountId, params.type);
@@ -19,10 +19,13 @@ const Friends = () => {
                 #{params.type.toLocaleUpperCase()}
             </div>
             <div className='container'>
-                {followers.map((friend) => {
+                {friends.map((friend) => {
                     return <div className='block'>
-                        <div className='inner'>
-                            <img src={`data:image/png;base64,${friend.profilePic}`} alt='dp' />
+                        <div className='inner'>{
+                            friend.profilePic === "bnVsbA=="
+                            && <img src={require('../images/heart.png')} alt='dp' />
+                            || <img src={`data:image/png;base64,${friend.profilePic}`} alt='dp' />
+                        }
                             <div className='details'>
                                 <span style={{ color: "black" }}>{friend.username}</span>
                                 <span>{friend.firstName} {friend.lastName}</span>

@@ -7,7 +7,7 @@ const FriendState = (props) => {
     const userContext = useContext(UserContext);
     const { user, getUserByToken } = userContext;
 
-    const [friends, setFollowers] = useState([])
+    const [friends, setFriends] = useState([])
     const [followings, setFollowings] = useState([])
 
     const host = 'http://localhost:8080/api/v1/friends';
@@ -35,7 +35,7 @@ const FriendState = (props) => {
             }
         })
         const json = await response.json()
-        setFollowers(json)
+        setFriends(json)
     }
 
     // GET : get followings
