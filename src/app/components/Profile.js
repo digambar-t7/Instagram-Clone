@@ -13,21 +13,19 @@ const Profile = () => {
     const postContext = useContext(PostContext);
     const userContext = useContext(UserContext);
 
-    const { profilePosts, setProfilePosts, getPostsFromUser } = postContext;
-    const { user, acc, getUserByToken, getAccByUsername } = userContext;
+    const { profilePosts, getPostsFromUser } = postContext;
+    const { user, acc, getAccByUsername } = userContext;
 
 
     useEffect(() => {
-        setProfilePosts([])
         getAccByUsername(params.accountId)
         if (params.accountId === acc.username)
             console.log("My Profile")
-    }, [])
+    }, [params.accountId])
 
     useEffect(() => {
         getPostsFromUser(params.accountId)
     }, [acc, user])
-
 
     return (
         <div id='Profile'>
@@ -58,7 +56,7 @@ const Profile = () => {
 
             {/* Highlights Section */}
             <div id='highlights'>
-                <Stories />
+                {acc && <Stories username={`${acc.username}`} />}
             </div>
 
             {/* Content Section */}

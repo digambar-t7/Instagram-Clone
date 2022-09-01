@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import UserContext from '../context/User/UserContext';
 import '../css/Home.css';
 import PostsWindow from './PostsWindow';
@@ -6,9 +6,17 @@ import Stories from './Stories';
 import Suggestions from './Suggestions';
 
 const Home = () => {
-
     const userContext = useContext(UserContext)
-    const { getUserByToken } = userContext
+    const { user, getUserByToken } = userContext
+
+    useEffect(() => {
+        getUserByToken(localStorage.getItem('insta-user-token'))
+    }, [])
+
+    useEffect(() => {
+        console.log("home")
+        console.log(user)
+    }, [user])
 
 
     return (
@@ -17,21 +25,15 @@ const Home = () => {
 
                 <div className='left' >
                     <div className='stories-bg bg'>
-                        <Stories />
+                        {user && <Stories username={user.username} />}
                     </div>
-
-                    {/* for demo purpose only */}
-                    {/* <NavProfileBlock /> */}
-                    {/* plz delete later */}
-
-                    {/* PostsWindow :: consists of all the posts */}
                     <PostsWindow />
-
                 </div>
 
                 <div className='right' >
                     <Suggestions />
                 </div>
+
             </div>
         </div>
     )

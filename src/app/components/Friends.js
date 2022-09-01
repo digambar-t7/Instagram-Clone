@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import FriendContext from '../context/Friend/FriendContext';
 import "../css/Friends.css";
 
@@ -21,16 +21,18 @@ const Friends = () => {
             <div className='container'>
                 {friends.map((friend) => {
                     return <div className='block'>
-                        <div className='inner'>{
-                            friend.profilePic === "bnVsbA=="
-                            && <img src={require('../images/heart.png')} alt='dp' />
-                            || <img src={`data:image/png;base64,${friend.profilePic}`} alt='dp' />
-                        }
-                            <div className='details'>
-                                <span style={{ color: "black" }}>{friend.username}</span>
-                                <span>{friend.firstName} {friend.lastName}</span>
+                        <Link to={`/profile/${friend.username}`}>
+                            <div className='inner'>{
+                                friend.profilePic === "bnVsbA=="
+                                && <img src={require('../images/heart.png')} alt='dp' />
+                                || <img src={`data:image/png;base64,${friend.profilePic}`} alt='dp' />
+                            }
+                                <div className='details'>
+                                    <span style={{ color: "black" }}>{friend.username}</span>
+                                    <span>{friend.firstName} {friend.lastName}</span>
+                                </div>
                             </div>
-                        </div>
+                        </Link>
                         <button className='blue btn'> Remove </button>
                     </div>
                 })}

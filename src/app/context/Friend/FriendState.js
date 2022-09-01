@@ -52,7 +52,7 @@ const FriendState = (props) => {
 
 
     return (
-        <FriendContext.Provider value={{ friends, followings, addFriend, getFriends, getFollowings }}>
+        <FriendContext.Provider value={{ friends, setFriends, followings, addFriend, getFriends, getFollowings }}>
             {props.children}
         </FriendContext.Provider>
     )
