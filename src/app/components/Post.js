@@ -18,8 +18,12 @@ const Post = (props) => {
     }
 
     const handleLike = () => {
-        // setLiked(!liked);
-        console.log(props.post.picture)
+        setLiked(!liked);
+        if (liked) {
+            props.post.likes = props.post.likes - 1;
+        } else {
+            props.post.likes = props.post.likes + 1;
+        }
     }
     const handleSave = () => {
         setSaved(!saved);

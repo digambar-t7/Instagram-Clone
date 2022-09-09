@@ -143,3 +143,26 @@
     cursor: pointer;
     margin-left: 7px;
 }
+
+#Navbar .create-post {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    align-items: center;
+}
+
+#Navbar .create-post .input-block {
+    display: flex;
+    width: 100%;
+    padding: 12px;
+}
+
+#Navbar .create-post .input-block label {
+    width: 40%;
+}
+
+#Navbar .create-post .input-block input {
+    border: 1px solid gainsboro;
+    margin-left: 6px;
+    border-radius: 7px;
+}

@@ -44,7 +44,7 @@ const RegisterUser = () => {
         userConverter(details);
         formData.append("userData", JSON.stringify(newUser));
         registerUser(formData)
-        localStorage.setItem('insta-user', JSON.stringify(user));
+        // localStorage.setItem('insta-user', JSON.stringify(user));
     }
 
     // Converts selectedImage to blob format
@@ -107,7 +107,7 @@ const RegisterUser = () => {
                         <input type="text" name='bio' value={details.bio} onChange={handleDetails} />
                     </div>
                 </div>
-                <button className='blue-btn' onClick={handleSignup}>Signup</button>
+                <button className='blue btn' onClick={handleSignup}>Signup</button>
             </div>
         </div>
     )

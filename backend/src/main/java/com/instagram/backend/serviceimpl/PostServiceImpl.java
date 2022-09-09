@@ -35,9 +35,17 @@ public class PostServiceImpl implements PostService {
         newPost.setTimestamp(LocalDateTime.now());
         User owner = loggedUser.getUser();
         newPost.setOwner(owner);
+        System.out.println("-----------------------------------------------------");
+        System.out.println(newPost);
+        System.out.println("-----------------------------------------------------");
         this.postRepository.save(newPost);
-        owner.setCountOfPosts(owner.getPosts().size());
-        this.userRepository.save(owner);
+        System.out.println("-----------------------------------------------------");
+        System.out.println(newPost);
+        System.out.println("-----------------------------------------------------");
+        // owner.setCountOfPosts(owner.getPosts().size());
+        // owner.getPosts().add(newPost);
+        // owner.setPosts(owner.getPosts());
+        // this.userRepository.save(owner);
     }
 
     @Override

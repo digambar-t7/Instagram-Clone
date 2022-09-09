@@ -32,6 +32,19 @@ const PostState = (props) => {
         const json = await response.json();
         setProfilePosts(json)
     }
+    // POST : addPost
+    const addPost = async (formData) => {
+        const response = await fetch(`${host}add`, {
+            method: "POST",
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem('insta-user-token')
+            },
+            body: formData
+        })
+        const json = await response.json()
+        console.log('add post from poststate')
+        console.log(json)
+    }
 
     useEffect(() => {
         if (profilePosts.length !== 0) {
@@ -42,7 +55,7 @@ const PostState = (props) => {
 
 
     return (
-        <PostContext.Provider value={{ posts, profilePosts, setProfilePosts, getAllPosts, getPostsFromUser }}>
+        <PostContext.Provider value={{ posts, profilePosts, setProfilePosts, getAllPosts, getPostsFromUser, addPost }}>
             {props.children}
         </PostContext.Provider>
     )

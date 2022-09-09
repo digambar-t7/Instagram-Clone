@@ -2,7 +2,9 @@ package com.instagram.backend.entity;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,16 +15,18 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Post {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String location;
     private int likes;
@@ -31,17 +35,16 @@ public class Post {
     // JsonBackReference not serializes the property hence JsonProperty() is used to
     // add it explicitly to the response body
     @JsonBackReference
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private User owner;
     private LocalDateTime timestamp;
 
     @Lob
     private byte[] picture;
 
-    public Post(String location, String caption, byte[] picture) {
+    public Post(String location, String caption) {
         this.location = location;
         this.caption = caption;
-        this.picture = picture;
     }
 
     // this will add another property to the response
