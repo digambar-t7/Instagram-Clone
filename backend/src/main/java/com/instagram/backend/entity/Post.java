@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.AllArgsConstructor;
@@ -34,7 +34,8 @@ public class Post {
     // Post::Child , since it is ManyToOne
     // JsonBackReference not serializes the property hence JsonProperty() is used to
     // add it explicitly to the response body
-    @JsonBackReference
+    // @JsonBackReference
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private User owner;
     private LocalDateTime timestamp;
