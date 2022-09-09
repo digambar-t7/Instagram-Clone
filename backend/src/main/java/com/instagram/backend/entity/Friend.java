@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -26,9 +27,10 @@ public class Friend {
     private int id;
     private String friendName;
 
-    @JsonBackReference
-    @ManyToMany(mappedBy = "friends", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private Set<User> users = new HashSet<>();
+    // @JsonBackReference
+    @JsonIgnore
+    @ManyToMany(mappedBy = "friends", fetch = FetchType.LAZY)
+    private Set<User> users;
 
     public Friend() {
         super();

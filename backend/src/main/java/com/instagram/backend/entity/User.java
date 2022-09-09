@@ -16,6 +16,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.Getter;
@@ -48,8 +49,9 @@ public class User {
     @OneToMany(mappedBy = "owner", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Post> posts;
 
-    @JsonManagedReference
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    // @JsonManagedReference
+    // @JsonIgnore
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "user_friends", joinColumns = {
             @JoinColumn(name = "username", referencedColumnName = "username")
     }, inverseJoinColumns = {
