@@ -1,10 +1,9 @@
 package com.instagram.backend.entity;
 
 import java.time.LocalDateTime;
+import java.util.Arrays;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,7 +13,6 @@ import javax.persistence.ManyToOne;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -23,11 +21,11 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 public class Post {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
     private String location;
     private int likes;
     private String caption;
@@ -36,7 +34,7 @@ public class Post {
     // add it explicitly to the response body
     // @JsonBackReference
     @JsonIgnore
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne
     private User owner;
     private LocalDateTime timestamp;
 
@@ -48,6 +46,15 @@ public class Post {
         this.caption = caption;
     }
 
+    public Post(String location, int likes, String caption, User owner, LocalDateTime timestamp, byte[] picture) {
+        this.location = location;
+        this.caption = caption;
+        this.timestamp = timestamp;
+        this.picture = picture;
+        this.likes = likes;
+        this.owner = owner;
+    }
+
     // this will add another property to the response
     @JsonProperty
     public String getUserId() {
@@ -56,7 +63,13 @@ public class Post {
 
     @Override
     public String toString() {
-        return "Post [caption=" + caption + ", id=" + id + "]";
+        return "Post [caption=" + caption + ", id=" + id + ", likes=" + likes + ", location=" + location + ", owner="
+                + owner + ", picture=" + Arrays.toString(picture).substring(0, 10) + ", timestamp=" + timestamp + "]";
     }
+
+    // @Override
+    // public String toString() {
+    // return "Post [caption=" + caption + ", id=" + id + "]";
+    // }
 
 }

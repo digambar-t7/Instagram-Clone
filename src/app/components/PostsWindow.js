@@ -9,7 +9,9 @@ const PostsWindow = () => {
     const { posts, getAllPosts } = context;
 
     useEffect(() => {
-        getAllPosts();
+        setTimeout(() => {
+            getAllPosts();
+        }, 1000);
     }, [])
 
 

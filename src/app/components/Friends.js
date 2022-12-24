@@ -11,6 +11,8 @@ const Friends = () => {
 
     useEffect(() => {
         getFriends(params.accountId, params.type);
+        setTimeout(() => {
+        }, 1000);
     }, [])
 
     return (

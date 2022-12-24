@@ -1,9 +1,15 @@
 package com.instagram.backend.serviceimpl;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.method.P;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -20,32 +26,22 @@ import com.instagram.backend.service.PostService;
 @Service
 public class PostServiceImpl implements PostService {
 
+    @Autowired
     private PostRepository postRepository;
+    @Autowired
     private UserRepository userRepository;
-
-    public PostServiceImpl(PostRepository postRepository, UserRepository userRepository) {
-        this.postRepository = postRepository;
-        this.userRepository = userRepository;
-    }
 
     @Override
     public void addPost(MyUserDetails loggedUser, MultipartFile file, String postData) throws Exception {
         Post newPost = new ObjectMapper().readValue(postData, Post.class);
-        newPost.setPicture(file.getBytes());
         newPost.setTimestamp(LocalDateTime.now());
-        User owner = loggedUser.getUser();
-        newPost.setOwner(owner);
-        System.out.println("-----------------------------------------------------");
-        System.out.println(newPost);
-        System.out.println("-----------------------------------------------------");
+        newPost.setPicture(file.getBytes());
+        System.out.println(file.getBytes());
+        User user = loggedUser.getUser();
+        newPost.setOwner(user);
         this.postRepository.save(newPost);
-        System.out.println("-----------------------------------------------------");
-        System.out.println(newPost);
-        System.out.println("-----------------------------------------------------");
-        // owner.setCountOfPosts(owner.getPosts().size());
-        // owner.getPosts().add(newPost);
-        // owner.setPosts(owner.getPosts());
-        // this.userRepository.save(owner);
+        user.setCountOfPosts(user.getPosts().size() + 1);
+        this.userRepository.save(user);
     }
 
     @Override
@@ -55,7 +51,14 @@ public class PostServiceImpl implements PostService {
         if (userOpt.isEmpty()) {
             return null;
         }
-        return userOpt.get().getPosts();
+        Set<Post> set = new HashSet<>();
+        List<Post> list = new ArrayList<>();
+        for (Post post : userOpt.get().getPosts()) {
+            if (set.add(post)) {
+                list.add(post);
+            }
+        }
+        return list;
         // return this.postRepository.findAllByOwnerUsername(username);
     }
 

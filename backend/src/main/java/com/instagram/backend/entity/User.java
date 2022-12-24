@@ -44,10 +44,10 @@ public class User {
 
     // User::Parent , since user consists of multiple posts bcoz OneToMany
     // @JsonManagedReference
-    @OneToMany(mappedBy = "owner", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "owner", fetch = FetchType.EAGER)
     private List<Post> posts;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE }, fetch = FetchType.EAGER)
     @JoinTable(name = "user_friends", joinColumns = {
             @JoinColumn(name = "username", referencedColumnName = "username")
     }, inverseJoinColumns = {

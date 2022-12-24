@@ -10,7 +10,9 @@ const Home = () => {
     const { user, getUserByToken } = userContext
 
     useEffect(() => {
-        getUserByToken(localStorage.getItem('insta-user-token'))
+        setTimeout(() => {
+            getUserByToken(localStorage.getItem('insta-user-token'))
+        }, 1000);
     }, [])
 
     useEffect(() => {

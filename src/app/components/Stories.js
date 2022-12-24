@@ -9,13 +9,15 @@ const Stories = (props) => {
     const { friends, setFriends, getFriends } = friendsContext
 
     useEffect(() => {
-        setFriends([])
-        getFriends(props.username, "followings")
+        // setFriends([])
+        setTimeout(() => {
+            getFriends(props.username, "followings")
+        }, 1000);
     }, [])
 
-    useEffect(() => {
-        console.log("stories page : friends loaded")
-    }, [friends])
+    // useEffect(() => {
+    //     console.log("stories page : friends loaded")
+    // }, [friends])
 
 
     return (

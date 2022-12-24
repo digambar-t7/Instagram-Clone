@@ -22,6 +22,7 @@ const PostState = (props) => {
 
     // GET : getPostsFrom
     const getPostsFromUser = async (username) => {
+        setProfilePosts([])
         const response = await fetch(`${host}getpostsfrom/${username}`, {
             method: "GET",
             headers: {

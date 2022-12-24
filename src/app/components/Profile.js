@@ -16,15 +16,16 @@ const Profile = () => {
     const { profilePosts, getPostsFromUser } = postContext;
     const { user, acc, getAccByUsername } = userContext;
 
-
     useEffect(() => {
-        getAccByUsername(params.accountId)
-        if (params.accountId === acc.username)
-            console.log("My Profile")
+        setTimeout(() => {
+            getAccByUsername(params.accountId)
+        }, 500);
     }, [params.accountId])
 
     useEffect(() => {
-        getPostsFromUser(params.accountId)
+        setTimeout(() => {
+            getPostsFromUser(params.accountId)
+        }, 1000);
     }, [acc, user])
 
     return (

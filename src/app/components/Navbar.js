@@ -17,8 +17,8 @@ const Navbar = () => {
 
     const handleFile = (e) => {
         e.preventDefault();
-        setFile(e.target.file[0]);
-        console.log(file)
+        setFile(e.target.files[0]);
+        console.log(e.target.files[0])
     }
     const handleLocation = (e) => {
         setLocation(e.target.value)
@@ -30,7 +30,7 @@ const Navbar = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         const formData = new FormData()
-        formData.append('file', jsonBlob(file))
+        formData.append('file', file, file.name)
         formData.append('postData', JSON.stringify({ location, caption }))
         addPost(formData)
     }
@@ -131,7 +131,7 @@ const Navbar = () => {
                     {/* New Post form */}
                     <div className='input-block'>
                         <label>Select Picture </label>
-                        <input value={file} onChange={handleFile} type='file' style={{ border: "none" }} />
+                        <input type="file" name="file" onChange={handleFile} style={{ border: "none" }} />
                     </div>
                     <div className='input-block'>
                         <label>Add to Location</label>

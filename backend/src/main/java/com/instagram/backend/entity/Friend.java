@@ -1,7 +1,9 @@
 package com.instagram.backend.entity;
 
+import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -26,7 +28,7 @@ public class Friend {
 
     @JsonIgnore
     @ManyToMany(mappedBy = "friends", fetch = FetchType.LAZY)
-    private Set<User> users;
+    private Set<User> users = new HashSet<>();
 
     public Friend() {
         super();

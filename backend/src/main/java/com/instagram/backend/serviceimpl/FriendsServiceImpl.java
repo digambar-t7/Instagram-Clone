@@ -40,10 +40,10 @@ public class FriendsServiceImpl implements FriendsService {
         }
 
         // not working as per expectations
-        Set<Friend> set = user.getFriends();
-        if (set.contains(friend)) {
-            return "Failed! Already a friend if-block";
-        }
+        // Set<Friend> set = user.getFriends();
+        // if (set.contains(friend)) {
+        // return "Failed! Already a friend if-block";
+        // }
 
         for (Friend frnd : user.getFriends()) {
             if (frnd.equals(friend)) {
@@ -57,7 +57,7 @@ public class FriendsServiceImpl implements FriendsService {
         this.userRepository.save(user);
 
         User user2 = this.userRepository.findByUsername(friendUsername);
-        user2.setCountOfFollowers(friend.getUsers().size() + 1);
+        user2.setCountOfFollowers(friend.getUsers().size());
         this.userRepository.save(user2);
 
         return "Successfully! added friend";

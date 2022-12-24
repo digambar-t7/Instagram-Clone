@@ -70,6 +70,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             }
         }
 
+        System.out.println("Outside JwtAuthenticationFilter");
+
         // Forward the request & response for further processing
         filterChain.doFilter(request, response);
 

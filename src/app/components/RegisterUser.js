@@ -31,7 +31,8 @@ const RegisterUser = () => {
 
     const handleProfilePic = (e) => {
         e.preventDefault();
-        setProfilePic(e.target.file[0]);
+        setProfilePic(e.target.files[0].name);
+        // console.log(e.target.files)
     }
 
     const handleDetails = (e) => {
@@ -100,7 +101,7 @@ const RegisterUser = () => {
                     </div>
                     <div>
                         <label>Profile Pic</label>
-                        <input type="file" name='profilePic' value={profilePic} onChange={handleProfilePic} />
+                        <input type="file" name='profilePic' accept='.jpg,.png,.jpeg' value={profilePic} onChange={handleProfilePic} />
                     </div>
                     <div className='bio-div'>
                         <label>Add to your bio</label>

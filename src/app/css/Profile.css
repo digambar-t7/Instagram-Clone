@@ -24,6 +24,7 @@
     height: 150px;
     width: 150px;
     cursor: pointer;
+    object-fit: cover;
 }
 
 #Profile .bio .right {
